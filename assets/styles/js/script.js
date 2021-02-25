@@ -84,24 +84,6 @@ function getGameAPI(searchTerm) {
             "x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com"
         }
     });
-    // .then(response => {
-    //     console.log(response);
-    //     return response.json();
-    // })
-    // .then(function (data) {
-    //     console.log(data)
-    //     console.log(data.slug)
-    
-    //     //create an element that populates a link that says, did you mean
-    //     //and then we insert data.slug as the html text, and the link for that text
-    //     //is baseUrl + "/" + data.slug ;
-    
-    //     console.log(data.name)
-    //     console.log(data.playtime)
-    // })
-    // .catch(err => {
-    //     console.error(err);
-    // });
 }
 
 // f(x) = x + 2
@@ -130,23 +112,13 @@ $("#find-game").on("click", function(event) {
             console.log(data)
 
             for (var i = 0; i < data.results.length; i++) {
-
             console.log(data.results[i].name)
             console.log(data.results[i].playtime);
-
-    
             }
+        }
+    })
 
-
-
-
-
-
-var sleeping = 6.8;
-var working = 8.5;
-var travel = 1.11
-var exercise = 30;
-var eating = 1.8;
-
-
-
+    .catch(function(err) {
+        console.error(err)
+    })
+})	
