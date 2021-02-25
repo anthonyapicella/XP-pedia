@@ -66,11 +66,12 @@ $("#yes-dependent").on("click", function (event) {
 
 var baseUrl = "https://rawg-video-games-database.p.rapidapi.com/games";
 
-$("find-game").on("click", function(event) {
+$("#find-game").on("click", function(event) {
 	event.preventDefault();
 
 	var game = $("#game").val().trim();
-	var query = baseUrl + "/" + game;
+	var query = baseUrl+"/"+game;
+	
 
 
 	
@@ -87,13 +88,14 @@ $("find-game").on("click", function(event) {
 	})
 	.then(function (data) {
 		console.log(data)
+		console.log(data.name)
+		console.log(data.playtime)
 	})
 	.catch(err => {
 		console.error(err);
 	});
 
 })
-
 
 
 fetch("https://rawg-video-games-database.p.rapidapi.com/games", {
@@ -122,27 +124,6 @@ fetch("https://rawg-video-games-database.p.rapidapi.com/games", {
 .catch(err => {
 	console.error(err);
 });
-
-
-// fetch("https://rawg-video-games-database.p.rapidapi.com/games/%7Bgame_pk%7D", {
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-key": "053771b544msh062425a81420fa7p141f95jsn3af99f464143",
-// 		"x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com"
-// 	}
-// })
-// .then(response => {
-// 	console.log(response);
-// 	return response.json();
-// })
-// .then(function (data) {
-//     console.log(data)
-// })
-
-// .catch(err => {
-// 	console.error(err);
-// });
-
 
 
 
