@@ -4,3 +4,80 @@
     max-width: 100px;
     max-height: 100px;
 }
+
+
+
+#dropdownMenuButton{
+ width: 18%;
+    background-color: blue;
+}
+
+.display-4{
+    border-radius: 15px;
+    padding: 12px;
+    background-color: green;
+    color: black;
+}
+
+.jumbotron-fluid{
+    background-image: url(https://i.pinimg.com/originals/4a/18/3c/4a183c1dcf0e901399b30ecb3e1612ae.png);
+    background-position-y: 60%;
+    background-position:center;
+    background-size: 45%;
+    
+    
+}
+
+
+
+#last-game-played{
+
+
+    color: black;
+}
+
+.lead{
+    color: black;
+    font-size: 35px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+
+/ * {cursor: url(https://cur.cursors-4u.net/sports/spo-1/spo15.cur), auto !important;}
+
+
+#game{
+
+    background-color: aquamarine;
+}
+
+body{
+    background: darkgrey;
+
+}
+
+
+@media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+      background-repeat: no-repeat;
+      
+    }
+
+
+
+    .jumbotron-fluid{
+        background-image: url(https://i.pinimg.com/originals/4a/18/3c/4a183c1dcf0e901399b30ecb3e1612ae.png);
+        background-position-y: 120%;
+        background-position:center;
+        background-size: 120%;
+        background-repeat: no-repeat;
+    } 
+
+
+
+
+}
+
+

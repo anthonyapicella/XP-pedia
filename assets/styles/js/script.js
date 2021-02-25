@@ -148,6 +148,16 @@ $("#find-game").on("click", function(event) {
 
 
 
+
+
+
+var sleeping = 6.8;
+var working = 8.5;
+var travel = 1.11
+var exercise = 30;
+var eating = 1.8;
+
+
 // fetch("https://rawg-video-games-database.p.rapidapi.com/games", {
 // 	"method": "GET",
 // 	"headers": {
@@ -194,7 +204,3 @@ $("#find-game").on("click", function(event) {
 // .catch(err => {
 // 	console.error(err);
 // });
-
-
-
-
