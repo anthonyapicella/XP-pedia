@@ -1,50 +1,47 @@
-// $(document).ready(function() {    
-//     function calculateTime() {
-//             //get values
-//             var valuestart = $("select[name='timestart']").val();
-//             var valuestop = $("select[name='timestop']").val();
-              
-//              //create date format          
-//              var timeStart = new Date("01/01/2007 " + valuestart);
-//              var timeEnd = new Date("01/01/2007 " + valuestop);
-             
-//              var difference = timeEnd - timeStart;             
-//              var diff_result = new Date(difference);    
-             
-//              var hourDiff = diff_result.getHours();
+// function getApi() {
+   
+//     var baseUrl = 'https://api.bls.gov/publicAPI/v2/timeseries/data/';
+//     var apikey = '&api_key=9dabe6fca5474766befe65decab31101';
+//     var requestUrl = baseUrl + apikey;
+
+//     console.log(requestUrl)
     
-            
-//              $("p").html("<b>Hour Difference:</b> " + hourDiff )             
-             
-//     }
-//     $("select").change(calculateTime);
-//     calculateTime();
+//     fetch(requestUrl)
+        
+//       .then(function (response) {
+//           console.log(response)
+//           return response.json();
+
+//       })
+
+
+
+//       .then(function (data) {
+//         console.log(data)
+        
+        
 //     });
+// }
 
-//     var valuestart = $("select[name='timestart']").val();
-// var valuestop = $("select[name='timestop']").val();
-
-// //create date format          
-// var timeStart = new Date("01/01/2007 " + valuestart).getHours();
-// var timeEnd = new Date("01/01/2007 " + valuestop).getHours();
-
-// var hourDiff = timeEnd - timeStart;  
+// getApi();
 
 
-var date = new Date("'December 17, 1995");
+// 9dabe6fca5474766befe65decab31101
 
-//Add two hours
-date.setHours(date.getHours() + 2);
-
-//Go back 3 days
-date.setDate(date.getDate() - 3);
-
-//One minute ago...
-date.setMinutes(date.getMinutes() - 1);
-
-var today = new Date()
-var birthday = new Date('December 17, 1995 03:24:00')
-var birthday = new Date('1995-12-17T03:24:00')
-var birthday = new Date(1995, 11, 17)            // the month is 0-indexed
-var birthday = new Date(1995, 11, 17, 3, 24, 0)
-var birthday = new Date(628021800000)   
+fetch("https://rawg-video-games-database.p.rapidapi.com/games", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "053771b544msh062425a81420fa7p141f95jsn3af99f464143",
+		"x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com"
+	}
+})
+.then(response => {
+	console.log(response);
+    return response.json();
+})
+.then(function (data) {
+    console.log(data)
+})
+.catch(err => {
+	console.error(err);
+});
