@@ -61,6 +61,45 @@
             </div>
           </div>
       </div>
+      <script>
+        function getDateDifference(startDate, endDate) {
+          if (startDate > endDate) {
+            console.error('Start date must be before end date');
+            return null;
+          }
+          var startYear = startDate.getFullYear();
+          var startMonth = startDate.getMonth();
+          var startDay = startDate.getDate();
+    
+          var endYear = endDate.getFullYear();
+          var endMonth = endDate.getMonth();
+          var endDay = endDate.getDate();
+    
+          var february = (endYear % 4 == 0 && endYear % 100 != 0) || endYear % 400 == 0 ? 29 : 28;
+          var daysOfMonth = [31, february, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    
+          var startDateNotPassedInEndYear = (endMonth < startMonth) || endMonth == startMonth && endDay < startDay;
+          var years = endYear - startYear - (startDateNotPassedInEndYear ? 1 : 0);
+    
+          var months = (12 + endMonth - startMonth - (endDay < startDay ? 1 : 0)) % 12;
+    
+          var days = startDay <= endDay ? endDay - startDay : daysOfMonth[(12 + endMonth - 1) % 12] - startDay + endDay;
+    
+          return {
+            years: years,
+            months: months,
+            days: days
+          };
+        }
+    
+        var result = getDateDifference(new Date("2018-01-01"), new Date("2019-01-02"));
+    
+        //Print in console array with value
+        console.log(result);
+    
+        var text = result.years+" year, "+result.months+" month, "+result.days+" days";
+        alert(text);
+    </script>
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
