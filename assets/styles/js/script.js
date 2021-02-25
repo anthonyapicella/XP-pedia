@@ -1,4 +1,72 @@
-// // function getApi() {
+
+
+var fullDay = 24;
+console.log(fullDay);
+
+
+//drop down click events for work
+$("#no-work").on("click", function (event) {
+    event.preventDefault();
+    var workChoice = $("#no-work").text();
+    console.log(workChoice);
+})
+$("#part-work").on("click", function (event) {
+    var workChoice = $("#part-work").text();
+    console.log(workChoice);
+})
+$("#full-work").on("click", function (event) {
+    event.preventDefault();
+    var workChoice = $("#full-work").text();
+    console.log(workChoice);
+})
+
+//drop down click events for school
+$("#no-school").on("click", function (event) {
+    event.preventDefault();
+    var schoolChoice = $("#no-school").text();
+    console.log(schoolChoice);
+})
+$("#part-school").on("click", function (event) {
+    var schoolChoice = $("#part-school").text();
+    console.log(schoolChoice);
+})
+$("#full-school").on("click", function (event) {
+    event.preventDefault();
+    var schoolChoice = $("#full-school").text();
+    console.log(schoolChoice);
+})
+
+//drop down click events for exercise
+$("#no-exercise").on("click", function (event) {
+    event.preventDefault();
+    var exerciseChoice = $("#no-exercise").text();
+    console.log(exerciseChoice)
+})
+$("#yes-exercise").on("click", function (event) {
+    event.preventDefault();
+    var exerciseChoice = $("#yes-exercise").text();
+    fullDay = fullDay - 3;
+    console.log(exerciseChoice)
+    console.log(fullDay)
+})
+//drop down click events for dependents
+$("#no-dependent").on("click", function (event) {
+    event.preventDefault();
+    var dependentChoice = $("#no-dependent").text();
+    console.log(dependentChoice)
+})
+$("#yes-dependent").on("click", function (event) {
+    event.preventDefault();
+    var dependentChoice = $("#yes-dependent").text();
+    fullDay = fullDay - .50;
+    console.log(dependentChoice)
+    console.log(fullDay)
+})
+
+
+
+
+// function getApi() {
    
 // //     var baseUrl = 'https://api.bls.gov/publicAPI/v2/timeseries/data/';
 // //     var apikey = '&api_key=9dabe6fca5474766befe65decab31101';
@@ -28,7 +96,27 @@
 
 // // 9dabe6fca5474766befe65decab31101
 
-// fetch("https://rawg-video-games-database.p.rapidapi.com/games", {
+
+fetch("https://rawg-video-games-database.p.rapidapi.com/games", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "053771b544msh062425a81420fa7p141f95jsn3af99f464143",
+		"x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com"
+	}
+})
+.then(response => {
+	console.log(response);
+    return response.json();
+})
+.then(function (data) {
+    console.log(data)
+})
+.catch(err => {
+	console.error(err);
+});
+
+
+// fetch("https://rawg-video-games-database.p.rapidapi.com/games/%7Bgame_pk%7D", {
 // 	"method": "GET",
 // 	"headers": {
 // 		"x-rapidapi-key": "053771b544msh062425a81420fa7p141f95jsn3af99f464143",
@@ -37,11 +125,12 @@
 // })
 // .then(response => {
 // 	console.log(response);
-//     return response.json();
+// 	return response.json();
 // })
 // .then(function (data) {
 //     console.log(data)
 // })
+
 // .catch(err => {
 // 	console.error(err);
 // });
@@ -56,46 +145,3 @@ var exercise = 30;
 var eating = 1.8;
 
 
-// function workTime(sleeping){
-// 	console.time(workTime)
-
-// }
-// <script>
-//     function getDateDifference(startDate, endDate) {
-//       if (startDate > endDate) {
-//         console.error('Start date must be before end date');
-//         return null;
-//       }
-//       var startYear = startDate.getFullYear();
-//       var startMonth = startDate.getMonth();
-//       var startDay = startDate.getDate();
-
-//       var endYear = endDate.getFullYear();
-//       var endMonth = endDate.getMonth();
-//       var endDay = endDate.getDate();
-
-//       var february = (endYear % 4 == 0 && endYear % 100 != 0) || endYear % 400 == 0 ? 29 : 28;
-//       var daysOfMonth = [31, february, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-
-//       var startDateNotPassedInEndYear = (endMonth < startMonth) || endMonth == startMonth && endDay < startDay;
-//       var years = endYear - startYear - (startDateNotPassedInEndYear ? 1 : 0);
-
-//       var months = (12 + endMonth - startMonth - (endDay < startDay ? 1 : 0)) % 12;
-
-//       var days = startDay <= endDay ? endDay - startDay : daysOfMonth[(12 + endMonth - 1) % 12] - startDay + endDay;
-
-//       return {
-//         years: years,
-//         months: months,
-//         days: days
-//       };
-//     }
-
-//     var result = getDateDifference(new Date("2018-01-01"), new Date("2019-01-02"));
-
-//     //Print in console array with value
-//     console.log(result);
-
-//     var text = result.years+" year, "+result.months+" month, "+result.days+" days";
-//     alert(text);
-// </script>
