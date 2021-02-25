@@ -11,10 +11,11 @@
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-          <h1 class="display-4" id="title">XP pedia</h1>
+          <h1 class="display-4" style="float: right" id="title">XP pedia</h1>
           <img src="assets/images/avatar_1.jpg" id="avatar_1" class="col-6 col-lg-12">
           <p class="lead" id="user-id" class="col-6">User ID</p>
-          <p class="lead" id="last-game-played">Last Game Played</p>
+          <p class="lead" id="last-game-played" style="float: right">Last Game Played</p>
+          <p class="lead">Your Free Time</p>
         </div>
       </div>
 
@@ -26,9 +27,9 @@
               Do you work?
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="work">
-              <a class="dropdown-item">What is work?</a>
-              <a class="dropdown-item">I work part time</a>
-              <a class="dropdown-item">I work full time</a>
+              <a class="dropdown-item" id="no-work">What is work?</a>
+              <a class="dropdown-item" id="part-work">I work part time</a>
+              <a class="dropdown-item" id="full-work">I work full time</a>
             </div>
           </div>
           <div class="dropdown">
@@ -36,19 +37,18 @@
               Do you attend school?
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="school">
-              <a class="dropdown-item">I do not attend school</a>
-              <a class="dropdown-item">I attend school part time</a>
-              <a class="dropdown-item">I attend school full time</a>
+              <a class="dropdown-item" id="no-school">I do not attend school</a>
+              <a class="dropdown-item" id="part-school">I attend school part time</a>
+              <a class="dropdown-item" id="full-school">I attend school full time</a>
             </div>
           </div>
-          <div class="dropdown">
+          <div class="dropdown-exercise">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Do you exercise?
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="exercise">
-              <a class="dropdown-item">I do not exercise</a>
-              <a class="dropdown-item">I exercise occasionally</a>
-              <a class="dropdown-item">I exercise for breakfast</a>
+              <a class="dropdown-item" id="no-exercise" value="no">I do not exercise</a>
+              <a class="dropdown-item" id="yes-exercise" value="yes">I exercise for breakfast</a>
             </div>
           </div>
           <div class="dropdown">
@@ -56,13 +56,14 @@
               Do you have dependents?
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dependent">
-              <a class="dropdown-item">I depend on myself</a>
-              <a class="dropdown-item">Others depend on me</a>
+              <a class="dropdown-item" id="no-dependent">I depend on myself</a>
+              <a class="dropdown-item" id="yes-dependent">Others depend on me</a>
             </div>
           </div>
       </div>
 
 
+      
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <!--boostrap scripts-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
