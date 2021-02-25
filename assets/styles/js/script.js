@@ -1,3 +1,10 @@
+//variables for time reduction
+var sleeping = 6.8;
+var working = 8.5;
+var travel = 1.11
+var exercise = 30;
+var eating = 1.8;
+
 
 
 var fullDay = 24;
@@ -64,66 +71,74 @@ $("#yes-dependent").on("click", function (event) {
 })
 
 
-var baseUrl = "https://rawg-video-games-database.p.rapidapi.com/games";
+
+function getGameAPI(searchTerm) {
+    var baseUrl = "https://rawg-video-games-database.p.rapidapi.com/games";
+    var query = baseUrl + "?search=" + searchTerm + "&page_size=5";
+    //we now limit serach terms to 5
+    
+    return fetch(query, {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "053771b544msh062425a81420fa7p141f95jsn3af99f464143",
+            "x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com"
+        }
+    });
+    // .then(response => {
+    //     console.log(response);
+    //     return response.json();
+    // })
+    // .then(function (data) {
+    //     console.log(data)
+    //     console.log(data.slug)
+    
+    //     //create an element that populates a link that says, did you mean
+    //     //and then we insert data.slug as the html text, and the link for that text
+    //     //is baseUrl + "/" + data.slug ;
+    
+    //     console.log(data.name)
+    //     console.log(data.playtime)
+    // })
+    // .catch(err => {
+    //     console.error(err);
+    // });
+}
+
+// f(x) = x + 2
+//x would be the parameter
+// f(borderlands3) = borderlands3 + 2
 
 $("#find-game").on("click", function(event) {
 	event.preventDefault();
+	var game = $("#game").val().split(" ").join("-");
+    getGameAPI(game)
+    .then(function(response) {
+        return response.json()
+    })
+    .then(function(data) {
+        if(data.redirect) {
+            console.log('first condition triggered')
+            getGameAPI(data.slug)
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data1) {
+                console.log(data1);
+            });
+        } else {
+            console.log('else condition triggered')
+            console.log(data)
 
-	var game = $("#game").val().trim();
-	var query = baseUrl+"/"+game;
-	
+            for (var i = 0; i < data.results.length; i++) {
 
-
-	
-	fetch(query, {
-		"method": "GET",
-		"headers": {
-			"x-rapidapi-key": "053771b544msh062425a81420fa7p141f95jsn3af99f464143",
-			"x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com"
-		}
-	})
-	.then(response => {
-		console.log(response);
-		return response.json();
-	})
-	.then(function (data) {
-		console.log(data)
-		console.log(data.name)
-		console.log(data.playtime)
-	})
-	.catch(err => {
-		console.error(err);
-	});
-
-})
-
-
-fetch("https://rawg-video-games-database.p.rapidapi.com/games", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "053771b544msh062425a81420fa7p141f95jsn3af99f464143",
-		"x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com"
-	}
-})
-.then(response => {
-	console.log(response);
-    return response.json();
-})
-.then(function (data) {
-    console.log(data)
-
-    for(var i = 0; i < data.results.length; i++) {
-      
-        console.log(data.results[i].name)
-        console.log(data.results[i].playtime)
-    }
+            console.log(data.results[i].name)
+            console.log(data.results[i].playtime);
 
     
-    
-})
-.catch(err => {
-	console.error(err);
-});
+            }
+
+
+
 
 
 
@@ -132,4 +147,6 @@ var working = 8.5;
 var travel = 1.11
 var exercise = 30;
 var eating = 1.8;
+
+
 
