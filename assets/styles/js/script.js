@@ -45,3 +45,12 @@ fetch("https://rawg-video-games-database.p.rapidapi.com/games", {
 .catch(err => {
 	console.error(err);
 });
+
+
+
+
+var sleeping = 6.8;
+var working = 8.5;
+var travel = 1.11
+var exercise = 30;
+var eating = 1.8;
