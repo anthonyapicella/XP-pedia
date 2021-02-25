@@ -137,15 +137,6 @@ $("#find-game").on("click", function(event) {
     
             }
 
-        }
-    })
-
-    
-    .catch(function(err) {
-        console.error(err)
-    })
-})
-
 
 
 
@@ -158,49 +149,4 @@ var exercise = 30;
 var eating = 1.8;
 
 
-// fetch("https://rawg-video-games-database.p.rapidapi.com/games", {
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-key": "053771b544msh062425a81420fa7p141f95jsn3af99f464143",
-// 		"x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com"
-// 	}
-// })
-// .then(response => {
-// 	console.log(response);
-//     return response.json();
-// })
-// .then(function (data) {
-//     console.log(data)
 
-//     for(var i = 0; i < data.results.length; i++) {
-      
-//         console.log(data.results[i].name)
-//         console.log(data.results[i].playtime)
-//     }
-
-    
-    
-// })
-// .catch(err => {
-// // 	console.error(err);
-// });
-
-
-// fetch("https://rawg-video-games-database.p.rapidapi.com/games/%7Bgame_pk%7D", {
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-key": "053771b544msh062425a81420fa7p141f95jsn3af99f464143",
-// 		"x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com"
-// 	}
-// })
-// .then(response => {
-// 	console.log(response);
-// 	return response.json();
-// })
-// .then(function (data) {
-//     console.log(data)
-// })
-
-// .catch(err => {
-// 	console.error(err);
-// });
