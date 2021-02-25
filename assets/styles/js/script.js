@@ -110,6 +110,15 @@ fetch("https://rawg-video-games-database.p.rapidapi.com/games", {
 })
 .then(function (data) {
     console.log(data)
+
+    for(var i = 0; i < data.results.length; i++) {
+      
+        console.log(data.results[i].name)
+        console.log(data.results[i].playtime)
+    }
+
+    
+    
 })
 .catch(err => {
 	console.error(err);
