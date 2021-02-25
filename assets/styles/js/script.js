@@ -64,8 +64,37 @@ $("#yes-dependent").on("click", function (event) {
 })
 
 
+var baseUrl = "https://rawg-video-games-database.p.rapidapi.com/games";
+
+$("find-game").on("click", function(event) {
+	event.preventDefault();
+
+	var game = $("#game").val().trim();
+	var query = baseUrl + "/" + game;
 
 
+	
+	fetch(query, {
+		"method": "GET",
+		"headers": {
+			"x-rapidapi-key": "053771b544msh062425a81420fa7p141f95jsn3af99f464143",
+			"x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com"
+		}
+	})
+	.then(response => {
+		console.log(response);
+		return response.json();
+	})
+	.then(function (data) {
+		console.log(data)
+	})
+	.catch(err => {
+		console.error(err);
+	});
+
+})
+
+<<<<<<< HEAD
 // function getApi() {
    
 // //     var baseUrl = 'https://api.bls.gov/publicAPI/v2/timeseries/data/';
@@ -95,6 +124,8 @@ $("#yes-dependent").on("click", function (event) {
 
 
 // // 9dabe6fca5474766befe65decab31101
+=======
+>>>>>>> e60d3901af66e6232e5906102a101082d5da13f8
 
 
 fetch("https://rawg-video-games-database.p.rapidapi.com/games", {
@@ -110,6 +141,15 @@ fetch("https://rawg-video-games-database.p.rapidapi.com/games", {
 })
 .then(function (data) {
     console.log(data)
+
+    for(var i = 0; i < data.results.length; i++) {
+      
+        console.log(data.results[i].name)
+        console.log(data.results[i].playtime)
+    }
+
+    
+    
 })
 .catch(err => {
 	console.error(err);
