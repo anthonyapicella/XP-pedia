@@ -15,6 +15,8 @@ var dependentCare = 1.5;
 var exercise = .5;
 var travel = 1;
 
+var gameCard = $("#game-cards")
+
 // added variable myDay to later subtract a 'fullDay'
 var fullDay = 24;
 var myDay = 24;
@@ -160,12 +162,25 @@ $("#find-game").on("click", function(event) {
 
             for (var i = 0; i < data.results.length; i++) {
                 if (data.results.playtime > 0) {
-
                 }
+                
+
             console.log(data.results[i].name);
             console.log(data.results[i].playtime);
-
             console.log(data.results[i].released);
+                
+
+            var displaySearchResults = $("<div class='new-card' style='background-color: black; color: white; max-width: 15em;'></div>");
+            var displayTitle = $("<h1></h1>");
+            var displayPlayTime = $("<h3></h3>");
+
+            $(gameCard).append(displaySearchResults)
+            $(".new-card").append(displayTitle);
+            $(".new-card").append(displayPlayTime);
+
+            $(displayTitle).append(data.results[i].name).innerhtml;
+            $(displayPlayTime).append(data.results[i].playtime).innerhtml;
+
             }
         }
     })
