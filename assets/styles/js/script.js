@@ -19,6 +19,8 @@ var travel = 1;
 var fullDay = 24;
 var myDay = 24;
 
+$(".class").html = "test";
+
 
 //drop down click events for work
 $("#no-work").on("click", function (event) {
@@ -162,6 +164,7 @@ $("#find-game").on("click", function(event) {
                 }
             console.log(data.results[i].name);
             console.log(data.results[i].playtime);
+
             console.log(data.results[i].released);
             }
         }
@@ -170,3 +173,11 @@ $("#find-game").on("click", function(event) {
     //     console.error(err)
     // })
 })
+
+
+var today = moment();
+$("#current-date").text(today.format("YYYY-MM-DD"));
+$("#current-time").text(today.format("h:mm"))
+
+
+
