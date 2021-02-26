@@ -187,21 +187,34 @@ $("#find-game").on("click", function(event) {
                     console.log(data.results[i].background_image)
                     
                     
-                    
-                    var displaySearchResults = $("<div class='new-card'></div>");
+                    var displayRow = $("<div class='row my-5'></div>");
+        
+                    var displayColumn1 = $("<div class='col-sm-3'></div>")
+                    var displayColumn2 = $("<div class='col-sm-9'></div>")
+                    var displaySearchResults1 = $("<div class='new-card'></div>");
+                    var displaySearchResults2 = $("<div class='new-card'></div>");
                     var displayTitle = $("<h1 class='game-title-card'></h1>");
                     var displayPlayTime = $("<h3 class='game-play-time'></h3>");
-                    var gameImage = $("<img id='game-image' src='" + data.results[i].background_image + "'>")
-
+                    var gameImage = $("<img id='game-image' src='" + data.results[i].background_image + "'>");
+                    displayTitle.text(data.results[i].name);
+                    displayPlayTime.text(data.results[i].playtime);
+                    displaySearchResults1.append(gameImage);
+                    console.log(displaySearchResults1)
+                    displaySearchResults2.append(displayTitle);
+                    displaySearchResults2.append(displayPlayTime);
+                    displayColumn1.append(displaySearchResults1);
+                    console.log(displayColumn1)
+                    displayColumn2.append(displaySearchResults2);
+                    displayRow.append(displayColumn1);
+                    displayRow.append(displayColumn2);
                     
         
-                    $(gameCard).append(displaySearchResults)
-                    $(".new-card").append(displayTitle);
-                    $(".new-card").append(displayPlayTime);
-                    $(".new-card").append(gameImage);
+                    gameCard.append(displayRow)
+                    console.log(displayRow)
+                    // $(".new-card").append(displayTitle);
+                    // $(".new-card").append(displayPlayTime);
+                    // $(".new-card").append(gameImage);
     
-                $(displayTitle).append(data.results[i].name).innerhtml;
-                $(displayPlayTime).append(data.results[i].playtime).innerhtml;
 
 
 
