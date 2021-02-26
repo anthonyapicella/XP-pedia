@@ -183,18 +183,28 @@ $("#find-game").on("click", function(event) {
                     console.log(data.results[i].name);
                     console.log(data.results[i].playtime);
                     console.log(data.results[i].released);
+
+                    console.log(data.results[i].background_image)
+                    
                     
                     
                     var displaySearchResults = $("<div class='new-card'></div>");
                     var displayTitle = $("<h1 class='game-title-card'></h1>");
                     var displayPlayTime = $("<h3 class='game-play-time'></h3>");
+                    var gameImage = $("<img id='game-image' src='" + data.results[i].background_image + "'>")
+
+                    
         
                     $(gameCard).append(displaySearchResults)
                     $(".new-card").append(displayTitle);
                     $(".new-card").append(displayPlayTime);
+                    $(".new-card").append(gameImage);
     
                 $(displayTitle).append(data.results[i].name).innerhtml;
                 $(displayPlayTime).append(data.results[i].playtime).innerhtml;
+
+
+
                 }
                 
                 

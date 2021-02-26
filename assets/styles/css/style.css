@@ -90,7 +90,7 @@ h4, h4 {
     max-width: 200px;
     height: 200px;
     max-height: 200px;
-    background-color: orange;
+ 
 }
 
 /* style game card titles using this */
@@ -104,6 +104,13 @@ h4, h4 {
 .game-play-time {
     color: black;
     
+}
+
+#game-image {
+    width: 100%;
+    max-width: 200px;
+    height: 100%;
+    max-height: 200px;
 }
 
 
