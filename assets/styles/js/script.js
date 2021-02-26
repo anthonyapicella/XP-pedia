@@ -122,3 +122,4 @@ $("#find-game").on("click", function(event) {
         console.error(err)
     })
 })	
+

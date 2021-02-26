@@ -1,91 +1,123 @@
-
 /* style for avatar picture */
+
 #avatar_1 {
     max-width: 100px;
     max-height: 100px;
 }
 
-
-
-#dropdownMenuButton{
- width: 18%;
-    background-color: blue;
+#dropdownMenuButton {
+    width: 90%;
+    background-color: orange;
+    color: black;
 }
 
-.display-4{
-    border-radius: 15px;
+.display-4 {
+    border-radius: 30px 30px 30px 30px;
     padding: 12px;
-    background-color: green;
+    background-color: orange;
     color: black;
+    font-size: 32px;
+    font-family: 'DotGothic16', sans-serif;
+    opacity: 0.9;
 }
 
-.jumbotron-fluid{
+.jumbotron-fluid {
     background-image: url(https://i.pinimg.com/originals/4a/18/3c/4a183c1dcf0e901399b30ecb3e1612ae.png);
-    background-position-y: 60%;
-    background-position:center;
-    background-size: 45%;
-    
-    
+    background-position-y: 90%;
+    background-position: bottom;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    background-position-x: center;
+    opacity: 0.9;
+    padding: 1px;
 }
 
-
-
-#last-game-played{
-
-
+#last-game-played {
     color: black;
+    opacity: 0.9;
+    background-color: orange;
+    font-size: 32px;
+    border-radius: 30px 30px 30px 30px;
 }
 
-.lead{
+.lead {
     color: black;
     font-size: 35px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-
+    font-family: 'DotGothic16', sans-serif;
 }
 
-
-/ * {cursor: url(https://cur.cursors-4u.net/sports/spo-1/spo15.cur), auto !important;}
-
-
-#game{
-
-    background-color: aquamarine;
+#game {
+    background-color: #b2ffff;
+    border-radius: 10px 10px 10px 10px;
 }
 
-body{
-    background: darkgrey;
-
+body {
+    background: grey;
 }
 
+.dropdown-toggle::after {
+    display: inline-block;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+}
 
-@media only screen and (max-width: 600px) {
+@media screen and (max-width: 992px) {
     body {
-      background-color: darkgrey;
-      background-repeat: no-repeat;
-      
+        background-color: gray;
     }
-
-
-
-    .jumbotron-fluid{
+    jumbotron-fluid {
         background-image: url(https://i.pinimg.com/originals/4a/18/3c/4a183c1dcf0e901399b30ecb3e1612ae.png);
         background-position-y: 120%;
-        background-position:center;
+        background-position: center;
         background-size: 120%;
         background-repeat: no-repeat;
-    } 
+    }
+}
 
+#find-game {
+    background-color: orange;
+    font-family: 'DotGothic16', sans-serif;
+    border-radius: 20px;
+}
 
-
-
-    #dropdownMenuButton{
-        width: 50%;
-           background-color: blue;
-       }
-
-
-
-
+@media screen and (max-width: 768px) {
+    body {
+        background-color: gray;
+    }
+    .jumbotron-fluid {
+        background-color: darkgrey;
+        background-repeat: no-repeat;
+        background-image: url(https://i.pinimg.com/originals/4a/18/3c/4a183c1dcf0e901399b30ecb3e1612ae.png);
+        background-position-y: 120%;
+        background-position: center;
+        background-size: 120%;
+        background-repeat: no-repeat;
+    }
 }
 
 
+
+@media only screen and (max-width: 576px) {
+    body {
+        background-color: yellow;
+        background-repeat: no-repeat;
+    }
+    .jumbotron-fluid {
+        background-image: url(https://i.pinimg.com/originals/4a/18/3c/4a183c1dcf0e901399b30ecb3e1612ae.png);
+        background-position-y: 120%;
+        background-position: center;
+        background-size: 120%;
+        background-repeat: no-repeat;
+    }
+    #dropdownMenuButton {
+        width: 95%;
+        background-color: orange;
+        color: black;
+    }
+}
