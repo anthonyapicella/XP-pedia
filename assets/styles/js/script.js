@@ -173,6 +173,7 @@ $("#find-game").on("click", function(event) {
 })	
 
 
+
 var today = moment();
 $("#current-date").text(today.format("YYYY-MM-DD"));
 $("#current-time").text(today.format("h:mm"))
