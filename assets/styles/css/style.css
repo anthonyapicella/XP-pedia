@@ -48,7 +48,7 @@
 }
 
 #game {
-    background-color: #b2ffff;
+    background-color: #5f9ea0;
     border-radius: 10px 10px 10px 10px;
 }
 
@@ -66,6 +66,37 @@ body {
     border-bottom: 0;
     border-left: .3em solid transparent;
 }
+
+
+h4, h4 {
+    font-size: 24px;
+    text-align: center;
+    padding: 70px;
+}
+
+
+
+::placeholder{
+    color: black;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 992px) {
     body {
