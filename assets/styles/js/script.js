@@ -15,7 +15,7 @@ var dependentCare = 1.5;
 var exercise = .5;
 var travel = 1;
 
-
+// added variable myDay to later subtract a 'fullDay'
 var fullDay = 24;
 var myDay = 24;
 
@@ -120,9 +120,10 @@ $("#time-left").on("click", function () {
 
 function getGameAPI(searchTerm) {
     var baseUrl = "https://rawg-video-games-database.p.rapidapi.com/games";
-    var query = baseUrl + "?search=" + searchTerm + "&page_size=5";
-    //we now limit serach terms to 5
-    
+    var query = baseUrl + "?search=" + searchTerm + "&page_size=10&search_exact=true&platforms=4,18,1,7";
+    // var query = baseUrl
+    //we now limit search terms to 5
+    console.log(query)
     return fetch(query, {
         "method": "GET",
         "headers": {
@@ -158,26 +159,25 @@ $("#find-game").on("click", function(event) {
             console.log(data)
 
             for (var i = 0; i < data.results.length; i++) {
-            console.log(data.results[i].name)
+                if (data.results.playtime > 0) {
+
+                }
+            console.log(data.results[i].name);
             console.log(data.results[i].playtime);
 
-
-
+            console.log(data.results[i].released);
             }
         }
     })
-
-    .catch(function(err) {
-        console.error(err)
-    })
-})	
-
+    // .catch(function(err) {
+    //     console.error(err)
+    // })
+})
 
 
 var today = moment();
 $("#current-date").text(today.format("YYYY-MM-DD"));
 $("#current-time").text(today.format("h:mm"))
-
 
 
 
