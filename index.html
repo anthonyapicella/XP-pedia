@@ -10,6 +10,7 @@
     <title>XP pedia</title>
 </head>
 <body>
+
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
           <h1 class="display-4" style="float: right" id="title">XP pedia</h1>
@@ -24,6 +25,30 @@
         <button id="find-game">Submit</button>
       </div>
         <div id="schedule">
+
+  <!-- added current date to the top of the jumbo tron -->
+  <div>
+    <p id="current-date" style="float: right"></p>
+    <p id="current-time" style="float: right"></p>
+  </div>
+  <!-- this is our jumbotron -->
+  <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4" style="float: right" id="title">XP pedia</h1>
+        <img src="assets/images/avatar_1.jpg" id="avatar_1" class="col-6 col-lg-12">
+        <p class="lead" id="user-id" class="col-6">User ID</p>
+        <p class="lead" id="last-game-played" style="float: right">Last Game Played</p>
+        <p class="lead">Your Free Time</p>
+      </div>
+    </div>
+
+    <div>
+      <h4>What game are you playing?</h4>
+      <input type="text" id="game" placeholder="Type Game Here">
+      <button id="find-game">Submit</button>
+    </div>
+      <div id="schedule">
+        
         <h4>What is your schedule like?</h4>
         
       <div class="container">
@@ -81,6 +106,61 @@
           </div>
         
       </div>
+
+
+      <div class="container">
+        <button type="button" class="btn btn-primary btn-sm" id="time-left">Free Time</button>
+        <p><span id="free-time"></span></p>
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Day of Week</th>
+            <th scope="col">Free Hours Left</th>
+          </tr>
+        </thead>
+        <tbody id="schedule-body">
+          <tr>
+            <th scope="row">Monday</th>
+            <td class="time" colspan="2">23</td>
+          </tr>
+          <tr>
+            <th scope="row">Tuesday</th>
+            <td class="time" colspan="2"></td>
+          </tr>
+          <tr>
+            <th scope="row">Wednesday</th>
+            <td class="time" colspan="2"></td>
+          </tr>
+          <tr>
+            <th scope="row">Thursday</th>
+            <td class="time" colspan="2"></td>
+          </tr>
+          <tr>
+            <th scope="row">Friday</th>
+            <td class="time" colspan="2"></td>
+          </tr>
+          <tr>
+            <th scope="row">Saturday</th>
+            <td class="time" colspan="2"></td>
+          </tr>
+          <tr>
+            <th scope="row">Sunday</th>
+            <td class="time" colspan="2"></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
+
+
+
+
+
+      
       
       <style type="text/css">* {cursor: url(https://cur.cursors-4u.net/sports/spo-1/spo15.cur), auto !important;}</style><a href="https://www.cursors-4u.com/cursor/2005/05/08/spo15-11.html" target="_blank" title="Sword"><img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Sword" style="position:absolute; top: 0px; right: 0px;" /></a>
       
@@ -88,6 +168,8 @@
     <!--boostrap scripts-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- our moment script for time -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <!--our script-->
     <script src="assets/styles/js/script.js"></script>
     
