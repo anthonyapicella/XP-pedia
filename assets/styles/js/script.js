@@ -4,6 +4,9 @@
 // var sleeping = 6.8;
 // var eating = 1.8;
 
+// $('select').selectpicker();
+
+
 var eatSleep = 8
 
 // if any of the following are true then travel hours are true
@@ -117,12 +120,24 @@ $("#time-left").on("click", function () {
       
 })
 
+//platforms default selected to ps4
+var platforms = ["18"];
 
+$("#platform-selection").on("click", function (event) {
+    event.preventDefault();
+
+    platforms = $("#platform-selection").val();
+
+    console.log($("#platform-selection").val())
+})
 
 
 function getGameAPI(searchTerm) {
+    //joins are platforms selection
+    var platformsJoined = platforms.join(",");
+
     var baseUrl = "https://rawg-video-games-database.p.rapidapi.com/games";
-    var query = baseUrl + "?search=" + searchTerm + "&page_size=10&search_exact=true&platforms=4,18,1,7";
+    var query = baseUrl + "?search=" + searchTerm + "&page_size=100&search_exact=true&platforms=" + platformsJoined;
     // var query = baseUrl
     //we now limit search terms to 5
     console.log(query)
@@ -134,6 +149,8 @@ function getGameAPI(searchTerm) {
         }
     });
 }
+
+
 
 // f(x) = x + 2
 //x would be the parameter
@@ -160,26 +177,27 @@ $("#find-game").on("click", function(event) {
             console.log('else condition triggered')
             console.log(data)
 
+
             for (var i = 0; i < data.results.length; i++) {
-                if (data.results.playtime > 0) {
+                if (data.results[i].playtime > 0) {
+                    console.log(data.results[i].name);
+                    console.log(data.results[i].playtime);
+                    console.log(data.results[i].released);
+                    
+                    
+                    var displaySearchResults = $("<div class='new-card'></div>");
+                    var displayTitle = $("<h1 class='game-title-card'></h1>");
+                    var displayPlayTime = $("<h3 class='game-play-time'></h3>");
+        
+                    $(gameCard).append(displaySearchResults)
+                    $(".new-card").append(displayTitle);
+                    $(".new-card").append(displayPlayTime);
+    
+                $(displayTitle).append(data.results[i].name).innerhtml;
+                $(displayPlayTime).append(data.results[i].playtime).innerhtml;
                 }
                 
-
-            console.log(data.results[i].name);
-            console.log(data.results[i].playtime);
-            console.log(data.results[i].released);
                 
-
-            var displaySearchResults = $("<div class='new-card' style='background-color: black; color: white; max-width: 15em;'></div>");
-            var displayTitle = $("<h1></h1>");
-            var displayPlayTime = $("<h3></h3>");
-
-            $(gameCard).append(displaySearchResults)
-            $(".new-card").append(displayTitle);
-            $(".new-card").append(displayPlayTime);
-
-            $(displayTitle).append(data.results[i].name).innerhtml;
-            $(displayPlayTime).append(data.results[i].playtime).innerhtml;
 
             }
         }

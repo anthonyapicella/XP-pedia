@@ -85,9 +85,26 @@ h4, h4 {
 
 }
 
+.new-card {
+    width: 200px;
+    max-width: 200px;
+    height: 200px;
+    max-height: 200px;
+    background-color: orange;
+}
 
+/* style game card titles using this */
+.game-title-card {
+    background-color: rgba(125, 158, 95, 0.5);
+    color: black;
+    font-size: 1.5em;
+    
+}
 
-
+.game-play-time {
+    color: black;
+    
+}
 
 
 
