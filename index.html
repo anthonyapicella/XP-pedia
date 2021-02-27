@@ -25,7 +25,7 @@
             <p class="lead" class="col-6 col-lg-12"><span class="background-titles">User ID</span></p>
           </div>
           <p class="lead"><span class="background-titles">Last Game Played</span></p>
-          <p class="lead"><span class="background-titles">Your Free Time</span></p>
+          <p class="lead"><span class="background-titles" id="available-free-time">Your Free Time</span></p>
         </div>
     </div>
 
@@ -45,62 +45,63 @@
           <input type="text" id="search-game" placeholder="Search Games" onfocus="this.placeholder =''"  onblur="this.placeholder = 'Search Games'">
           <button id="find-game">Submit</button>
         </div>
-      
-        <div class="container">
-          <div class="row align-items-start">
-            <div class="col">
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Do you work?
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="work">
-                  <a class="dropdown-item" id="no-work">What is work?</a>
-                  <a class="dropdown-item" id="part-work">I work part time</a>
-                  <a class="dropdown-item" id="full-work">I work full time</a>
-                </div>
-              </div>
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Do you attend school?
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="school">
-                  <a class="dropdown-item" id="no-school">I do not attend school</a>
-                  <a class="dropdown-item" id="part-school">I attend school part time</a>
-                  <a class="dropdown-item" id="full-school">I attend school full time</a>
-                </div>
-              </div>
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Do you exercise?
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="exercise">
-                  <a class="dropdown-item" id="no-exercise" value="no">I do not exercise</a>
-                  <a class="dropdown-item" id="yes-exercise" value="yes">I exercise for breakfast</a>
-                </div>
-              </div>
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Do you have dependents?
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dependent">
-                  <a class="dropdown-item" id="no-dependent">I depend on myself</a>
-                  <a class="dropdown-item" id="yes-dependent">Others depend on me</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <!--24 hours is displayed when they are looking at the page
-          then; when they select an option on any drop down, time of option length decreases 24 hrs
-          then -->
-          <p><span id="free-time">Time Left to play games today: </span></p>
-          </div>
       </div>
-      <div id="game-cards">
+      <!------------------ added radio buttons as it was easier to calculate total free time --------->
+        <div id="calculate-freetime">
+          <div class="form-cards">
+              <p><span>How is your sleep?</span></p>
+              <div class="checkbox">
+                  <label><input type="checkbox" id="no-sleep" value="5" name="sleep">Gaming > Sleep</label>
+              </div>
+              <div class="checkbox">
+                  <label><input type="checkbox" class="sleep" value="8" name="sleep">I sleepy normally</label>
+              </div>
+          </div>
+          <div class="form-cards">
+              <p><span>Do you work?</span></p>
+              <div class="checkbox">
+                  <label><input type="checkbox" class="work" value="0" name="work">What is work?</label>
+              </div>
+              <div class="checkbox">
+                  <label><input type="checkbox" class="work" value="4" name="work">I work part-time</label>
+              </div>
+              <div class="checkbox">
+                  <label><input type="checkbox" class="work" value="8" name="work">I work full time</label>
+              </div>
+          </div>
+          <div class="form-cards">
+              <p><span>Do you have dependents?</span></p>
+              <div class="checkbox">
+                  <label><input type="checkbox" class="dependent" value="0" name="dependent">Nobody depends on me</label>
+              </div>
+              <div class="checkbox">
+                  <label><input type="checkbox" class="dependent" value="1" name="dependent">Someone definitly depends on me</label>
+              </div>
+              <div class="checkbox">
+                  <label><input type="checkbox" class="dependent" value="2" name="dependent">Multiple people depend on me</label>
+              </div>
+          </div>
+          <div class="form-cards">
+              <p><span>Do you go to school?</span></p>
+              <div class="checkbox">
+                  <label><input type="checkbox" class="school" value="0" name="school">What is science?</label>
+              </div>
+              <div class="checkbox">
+                  <label><input type="checkbox" class="school" value="4" name="school">I attend school part-time</label>
+              </div>
+              <div class="checkbox">
+                  <label><input type="checkbox" class="school" value="8" name="school">I attend school full-time</label>
+              </div>
+          </div>
+          <div>
+              <input type="button" id="save_value" name="save_value" value="Save">
+          </div>
       </div>
     </div>
-
+        <!------------------ end of new html --------->
+    
+    <div id="game-cards">
+    </div>
     
 
       
