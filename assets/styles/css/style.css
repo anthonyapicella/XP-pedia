@@ -1,26 +1,33 @@
+:root {
+    --globalBorder: 3px solid rgba(0, 255, 0, 1);
+}
+
 /* style for avatar picture */
-
-#avatar_1 {
-    max-width: 100px;
-    max-height: 100px;
+#date {
+    padding-bottom: 1em;
+    background-color: orange;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    height: 1.5em;
+    margin-bottom: 5px;
+    color: lawngreen;
 }
 
-#dropdownMenuButton {
-    width: 90%;
+/* this is our websites name */
+#title {
     background-color: orange;
     color: black;
-}
-
-.display-4 {
-    border-radius: 30px 30px 30px 30px;
-    padding: 12px;
-    background-color: orange;
-    color: black;
-    font-size: 32px;
+    font-size: 3em;
     font-family: 'DotGothic16', sans-serif;
-    opacity: 0.9;
+    width: fit-content;
+    height: fit-content;
+    margin-top: 2em;
+    border: var(--globalBorder);
+    border-radius: 5px;
 }
 
+/* this is our jumbotron class */
 .jumbotron-fluid {
     background-image: url(https://i.pinimg.com/originals/4a/18/3c/4a183c1dcf0e901399b30ecb3e1612ae.png);
     background-position-y: 90%;
@@ -32,14 +39,71 @@
     opacity: 0.9;
     padding: 1px;
 }
-
-#last-game-played {
-    color: black;
-    opacity: 0.9;
-    background-color: orange;
-    font-size: 32px;
-    border-radius: 30px 30px 30px 30px;
+/* 
+this holds our users avatar and our users id in one line */
+#user-info {
+    display: flex;
 }
+
+/* this is the avatar image */
+#avatar {
+    max-width: 100px;
+    max-height: 100px;
+    margin-top: 4px;
+}
+
+/* background for titles in jumbotron */
+.background-titles {
+    background-color: orange;
+    border: var(--globalBorder);
+    border-radius: 5px;
+    box-shadow: 0px 8px 13px rgb(0 255 0);
+}
+
+/* this is our main card so we can form and fit all elements together as one */
+#main-card {
+    background-color: rgba(114, 143, 255, 1);
+    width: 22%;
+    padding: 10px 10px;
+    display: block;
+    text-align: center;
+    margin-left: 2em;
+    border: var(--globalBorder);
+    border-radius: 60px;
+    max-height: 450px;
+}
+
+/* this is our platform selector */
+#platform-selection {
+    background-color: orange;
+    display: table;
+    border: var(--globalBorder);
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* ACTUAL drop down menu items */
+#dropdownMenuButton {
+    width: fit-content;
+    background-color: orange;
+    color: black;
+    width: 14em;
+} 
+
+/* this is our dropdown class for ALL buttons */
+.dropdown {
+    width: fit-content;
+    background-color: orange;
+    color: black;
+    width: 14em;
+}
+/* this is the class that is attached to the elements that show when you click on a dropdown button */
+.show {
+    background-color: rgba(0, 255, 0, 1);
+    justify-content: center;
+}
+
 
 .lead {
     color: black;
@@ -47,17 +111,25 @@
     font-family: 'DotGothic16', sans-serif;
 }
 
-#game {
-    background-color: #5f9ea0;
-    border-radius: 10px 10px 10px 10px;
+/* this is where they input a game to search for */
+#search-game {
+    background-color: orange;
+    border-radius: 5px;
+    border-color: var(--globalBorder);
 }
 
-body {
-    background: grey;
+/* this is our find game button */
+#find-game {
+    background-color: orange;
+    font-family: 'DotGothic16', sans-serif;
+    border-radius: 20px;
+    margin: 5px 0;
+    border: var(--globalBorder);
 }
 
 .dropdown-toggle::after {
     display: inline-block;
+    justify-content: center;
     margin-left: .255em;
     vertical-align: .255em;
     content: "";
@@ -67,30 +139,42 @@ body {
     border-left: .3em solid transparent;
 }
 
+/* this idea will add styling for any game cards that populate after a search */
+#game-cards {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 1em;
 
-h4, h4 {
-    font-size: 24px;
-    text-align: center;
-    padding: 70px;
 }
 
-
+/* this is where we hold our main input card and any new cards that populate */
+#display-body {
+    display: flex;
+}
 
 * {cursor: url(https://cur.cursors-4u.net/sports/spo-1/spo15.cur), auto !important;}
 
-
 ::placeholder{
     color: black;
-
-
 }
 
+/* this id holds our displayrow where our content populates (its what Wilson created) */
+#card-display {
+    border: var(--globalBorder);
+    background-color: orange;
+    padding: 5px;
+    text-align: right;
+    width: 23em;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+/* this is the stying for the new card class that is attached to both of our elements when a games informaiton is drawn */
 .new-card {
     width: 200px;
     max-width: 200px;
     height: 200px;
     max-height: 200px;
- 
 }
 
 /* style game card titles using this */
@@ -98,12 +182,10 @@ h4, h4 {
     background-color: rgba(125, 158, 95, 0.5);
     color: black;
     font-size: 1.5em;
-    
 }
 
 .game-play-time {
     color: black;
-    
 }
 
 #game-image {
@@ -112,16 +194,6 @@ h4, h4 {
     height: 100%;
     max-height: 200px;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -138,11 +210,6 @@ h4, h4 {
     }
 }
 
-#find-game {
-    background-color: orange;
-    font-family: 'DotGothic16', sans-serif;
-    border-radius: 20px;
-}
 
 @media screen and (max-width: 768px) {
     body {
