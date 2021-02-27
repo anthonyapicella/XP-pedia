@@ -158,7 +158,7 @@ function getGameAPI(searchTerm) {
 
 $("#find-game").on("click", function(event) {
 	event.preventDefault();
-	var game = $("#game").val().split(" ").join("-");
+	var game = $("#search-game").val().split(" ").join("-");
     getGameAPI(game)
     .then(function(response) {
         return response.json()
@@ -187,7 +187,7 @@ $("#find-game").on("click", function(event) {
                     console.log(data.results[i].background_image)
                     
                     
-                    var displayRow = $("<div class='row my-5'></div>");
+                    var displayRow = $("<div class='row my-5' id='card-display'></div>");
         
                     var displayColumn1 = $("<div class='col-sm-3'></div>")
                     var displayColumn2 = $("<div class='col-sm-9'></div>")
@@ -197,7 +197,8 @@ $("#find-game").on("click", function(event) {
                     var displayPlayTime = $("<h3 class='game-play-time'></h3>");
                     var gameImage = $("<img id='game-image' src='" + data.results[i].background_image + "'>");
                     displayTitle.text(data.results[i].name);
-                    displayPlayTime.text(data.results[i].playtime);
+                    //added more text to display play time
+                    displayPlayTime.text("Finish game in " + data.results[i].playtime + " hours");
                     displaySearchResults1.append(gameImage);
                     console.log(displaySearchResults1)
                     displaySearchResults2.append(displayTitle);
