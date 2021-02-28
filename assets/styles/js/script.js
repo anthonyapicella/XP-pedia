@@ -39,15 +39,6 @@ $('#save_value').click(function() {
         $("#available-free-time").text("Total Free Time " + (24 - total) + " hours!");
     };
 
-    console.log(sel)
-    var monday = [];
-    var tuesday = [];
-    var wednesday = [];
-    var thursday = [];
-    var friday = [];
-    var saturday = [];
-    var sunday = [];
-
     for (var j = 0; j < sel.length; j++) {
         console.log(sel[j])
         
@@ -56,10 +47,6 @@ $('#save_value').click(function() {
         var dependent = sel[2];
         var school = sel[3];
     }
-    console.log(sleep);
-    console.log(work);
-    console.log(dependent);
-    console.log(school);
 
     //I set it to 23 to automatically deduct eating and drinking time for the day
     monday = 23 - sleep - work - dependent - school;
@@ -70,21 +57,27 @@ $('#save_value').click(function() {
     saturday = 23 - sleep - dependent;
     sunday = 23 - sleep - dependent;
     
-    $("#free-time-monday").text(monday + " hours");
-    $("#free-time-tuesday").text(tuesday + " hours");
-    $("#free-time-wednesday").text(wednesday + " hours");
-    $("#free-time-thursday").text(thursday + " hours");
-    $("#free-time-friday").text(friday + " hours");
-    $("#free-time-saturday").text(saturday + " hours");
-    $("#free-time-sunday").text(sunday + " hours");
-   
-
-    console.log(monday);
-    console.log(tuesday);
-
-
-
+    //sets our free time in local storage
+    localStorage.setItem("monday", monday);
+    localStorage.setItem("tuesday", tuesday);
+    localStorage.setItem("wednesday", wednesday);
+    localStorage.setItem("thursday", thursday);
+    localStorage.setItem("friday", friday);
+    localStorage.setItem("saturday", saturday);
+    localStorage.setItem("sunday", sunday);
+    
+    //anytime the user updates their free time, the page will reload with the new times
+    location.reload();
 })
+
+//stored values being displayed
+var mondayFreeTime = $("#free-time-monday").text(localStorage.getItem("monday") + " hours");
+$("#free-time-tuesday").text(localStorage.getItem("tuesday") + " hours");
+$("#free-time-wednesday").text(localStorage.getItem("wednesday") + " hours");
+$("#free-time-thursday").text(localStorage.getItem("thursday") + " hours");
+$("#free-time-friday").text(localStorage.getItem("friday") + " hours");
+$("#free-time-saturday").text(localStorage.getItem("saturday") + " hours");
+$("#free-time-sunday").text(localStorage.getItem("sunday") + " hours");
 
 //this function makes sure only one box is checked at a time
 $("input:checkbox").on('click', function() {
@@ -155,6 +148,7 @@ $("#find-game").on("click", function(event) {
             for (var i = 0; i < data.results.length; i++) {
 
                 if (data.results[i].playtime > 0) {
+
                     console.log(data.results[i].name);
                     console.log(data.results[i].playtime);
                     console.log(data.results[i].released);
@@ -166,29 +160,32 @@ $("#find-game").on("click", function(event) {
                     var displaySearchResults1 = $("<div class='new-card'></div>");
                     var displaySearchResults2 = $("<div class='new-card'></div>");
                     var displayTitle = $("<h1 class='game-title-card'></h1>");
-                    var displayPlayTime = $("<h3 class='game-play-time'></h3>");
+                    var displayPlayTime = $("<h3 class='game-play-time' name='" + data.results[i].playtime + "'></h3>");
                     var gameImage = $("<img id='game-image' src='" + data.results[i].background_image + "'>");
                     
                     displayTitle.text(data.results[i].name);
-                    //added more text to display play time
-                    displayPlayTime.text("Finish game in " + data.results[i].playtime + " hours");
+                    displayPlayTime.text(data.results[i].playtime);
                     displaySearchResults1.append(gameImage);
-                    console.log(displaySearchResults1)
                     displaySearchResults2.append(displayTitle);
                     displaySearchResults2.append(displayPlayTime);
                     displayColumn1.append(displaySearchResults1);
-                    console.log(displayColumn1)
                     displayColumn2.append(displaySearchResults2);
                     displayRow.append(displayColumn1);
                     displayRow.append(displayColumn2);
-
                     gameCard.append(displayRow)
-                    console.log(displayRow)
+
+                    
+                    
                 }
+
             }
         }
     })
 })
+
+
+
+
 
 //moments date
 var today = moment();
