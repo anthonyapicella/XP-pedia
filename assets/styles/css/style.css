@@ -1,6 +1,7 @@
 :root {
     --globalBorder: 3px solid rgba(0, 255, 0, 1);
     --blueBackgroundColor: rgba(114, 143, 255, 1);
+    --shadow: 1px 1px 1px black;
 }
 
 /* style for avatar picture */
@@ -28,7 +29,7 @@
     border-radius: 5px;
 }
 
-/* this is our jumbotron class */
+/* ----------------------------------BEG. JUMBOTRON STYLING --------------------------*/
 .jumbotron-fluid {
     background-image: url(https://i.pinimg.com/originals/4a/18/3c/4a183c1dcf0e901399b30ecb3e1612ae.png);
     background-position-y: 90%;
@@ -61,6 +62,15 @@ this holds our users avatar and our users id in one line */
     box-shadow: 0px 8px 13px rgb(0 255 0);
 }
 
+/*titles that are in jumbotron*/
+.lead {
+    color: black;
+    font-size: 35px;
+    font-family: 'DotGothic16', sans-serif;
+}
+
+/* ----------------------------------END JUMBOTRON STYLING --------------------------*/
+
 /* this is our main card so we can form and fit all elements together as one */
 #main-card {
     background-color: var(--blueBackgroundColor);
@@ -68,9 +78,9 @@ this holds our users avatar and our users id in one line */
     padding: 10px 10px;
     display: block;
     text-align: center;
-    margin-left: 2em;
+    margin: 0 10px 5px 10px;
     border: var(--globalBorder);
-    border-radius: 60px;
+    border-radius: 30px;
     max-height: 450px;
 }
 
@@ -82,14 +92,7 @@ this holds our users avatar and our users id in one line */
     margin: 0 auto;
     margin-bottom: 10px;
     border-radius: 5px;
-}
-
-
-/*titles that are in jumbotron*/
-.lead {
-    color: black;
-    font-size: 35px;
-    font-family: 'DotGothic16', sans-serif;
+    box-shadow: var(--shadow);
 }
 
 /* this is where they input a game to search for */
@@ -106,7 +109,32 @@ this holds our users avatar and our users id in one line */
     border-radius: 20px;
     margin: 5px 0;
     border: var(--globalBorder);
+    box-shadow: var(--shadow);
 }
+/* --------------------------------------------------BEG. TIMELOG STYLING---------------------------------------------------- */
+
+#calendar {
+    background-color: var(--blueBackgroundColor);
+    border: var(--globalBorder);
+    box-shadow: var(--shadow);
+    margin: 10px;
+    border-radius: 5px;
+}
+
+#save_value {
+    background-color: orange;
+    font-family: 'DotGothic16', sans-serif;
+    border-radius: 20px;
+    margin: 5px 0;
+    border: var(--globalBorder);
+    box-shadow: var(--shadow);
+}
+
+
+/* --------------------------------------------------END TIMELOG STYLING---------------------------------------------------- */
+
+
+
 
 
 /* this idea will add styling for any game cards that populate after a search */
@@ -114,6 +142,7 @@ this holds our users avatar and our users id in one line */
     display: flex;
     flex-wrap: wrap;
     padding-left: 1em;
+    box-shadow: var(--shadow);
 
 }
 
@@ -165,7 +194,7 @@ this holds our users avatar and our users id in one line */
     max-height: 200px;
 }
 
-/* ----------------------------------------- Styling for test.thml -------------------*/
+/* ----------------------------------------- Styling for schedule -------------------*/
 #calculate-freetime {
     display: flex;
     background-color: var(--blueBackgroundColor);
@@ -173,7 +202,8 @@ this holds our users avatar and our users id in one line */
     padding: 10px 10px;
     text-align: center;
     border: var(--globalBorder);
-    border-radius: 60px;
+    border-radius: 30px;
+    margin-bottom: 5px;
 }
 
 .form-cards {
@@ -185,7 +215,7 @@ this holds our users avatar and our users id in one line */
 }
 
 
-/* ----------------------------------------- Styling for test.thml -------------------*/
+/* ----------------------------------------- Styling for scheduler -------------------*/
 
 
 

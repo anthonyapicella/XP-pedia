@@ -1,4 +1,6 @@
 var gameCard = $("#game-cards")
+
+
 //------------------------------calednar javascript-------------------------------------//
 
 $(".current-day").text("Today is " + moment().format('dddd'));
@@ -10,10 +12,6 @@ $("#time-left-today").text(seperate[1] + " " + seperate[2] + " left to play vide
 
 //variables for hours in day - minus the average time it takes to eat and drink
 
-
-// $('#save_value').click(function() {
-//     var 
-// })
 
 
 //------------------------------calednar javascript-------------------------------------//
@@ -63,6 +61,7 @@ $('#save_value').click(function() {
     console.log(dependent);
     console.log(school);
 
+    //I set it to 23 to automatically deduct eating and drinking time for the day
     monday = 23 - sleep - work - dependent - school;
     tuesday = 23 - sleep - work - dependent - school;
     wednesday = 23 - sleep - work - dependent - school;
@@ -70,7 +69,7 @@ $('#save_value').click(function() {
     friday = 23 - sleep - work - dependent - school;
     saturday = 23 - sleep - dependent;
     sunday = 23 - sleep - dependent;
-
+    
     $("#free-time-monday").text(monday + " hours");
     $("#free-time-tuesday").text(tuesday + " hours");
     $("#free-time-wednesday").text(wednesday + " hours");
