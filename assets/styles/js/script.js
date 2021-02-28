@@ -1,4 +1,22 @@
 var gameCard = $("#game-cards")
+//------------------------------calednar javascript-------------------------------------//
+
+$(".current-day").text("Today is " + moment().format('dddd'));
+// $("#time-left-today").text("End of day is " + moment().endOf('day').fromNow());
+
+//using moment we calculate how much time we have left in the day and we dispaly it in a string//
+var seperate = moment().endOf('day').fromNow().split(" ");
+$("#time-left-today").text(seperate[1] + " " + seperate[2] + " left to play video games");
+
+//variables for hours in day - minus the average time it takes to eat and drink
+
+
+// $('#save_value').click(function() {
+//     var 
+// })
+
+
+//------------------------------calednar javascript-------------------------------------//
 
 //------- here is the added javascript for the newly added checkboxes -----------------------//
 
@@ -7,14 +25,13 @@ $('#save_value').click(function() {
     var sel = $('input[type=checkbox]:checked').map(function(_, el) {
         return $(el).val();
     }).get();
+
     console.log(sel)
+
     var total = 0;
     for (var i = 0; i < sel.length; i++) {
         total += sel[i] << 0;
-        
         console.log(total)
-        // $("#available-free-time").text("Total Free Time " + (24 - total) + " hours!");
-
     }
     //if the total (which is the amount of time spend NOT gaming) is greater than 24 hours --
     //it will display text
@@ -23,6 +40,51 @@ $('#save_value').click(function() {
     } else {
         $("#available-free-time").text("Total Free Time " + (24 - total) + " hours!");
     };
+
+    console.log(sel)
+    var monday = [];
+    var tuesday = [];
+    var wednesday = [];
+    var thursday = [];
+    var friday = [];
+    var saturday = [];
+    var sunday = [];
+
+    for (var j = 0; j < sel.length; j++) {
+        console.log(sel[j])
+        
+        var sleep = sel[0];
+        var work = sel[1];
+        var dependent = sel[2];
+        var school = sel[3];
+    }
+    console.log(sleep);
+    console.log(work);
+    console.log(dependent);
+    console.log(school);
+
+    monday = 23 - sleep - work - dependent - school;
+    tuesday = 23 - sleep - work - dependent - school;
+    wednesday = 23 - sleep - work - dependent - school;
+    thursday = 23 - sleep - work - dependent - school;
+    friday = 23 - sleep - work - dependent - school;
+    saturday = 23 - sleep - dependent;
+    sunday = 23 - sleep - dependent;
+
+    $("#free-time-monday").text(monday + " hours");
+    $("#free-time-tuesday").text(tuesday + " hours");
+    $("#free-time-wednesday").text(wednesday + " hours");
+    $("#free-time-thursday").text(thursday + " hours");
+    $("#free-time-friday").text(friday + " hours");
+    $("#free-time-saturday").text(saturday + " hours");
+    $("#free-time-sunday").text(sunday + " hours");
+   
+
+    console.log(monday);
+    console.log(tuesday);
+
+
+
 })
 
 //this function makes sure only one box is checked at a time

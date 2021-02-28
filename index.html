@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/styles/css/style.css">
     
@@ -28,6 +29,36 @@
           <p class="lead"><span class="background-titles" id="available-free-time">Your Free Time</span></p>
         </div>
     </div>
+    <div id="calendar">
+        <table style="width: 100%">
+            <tr>
+
+            </tr>
+            <tr>
+                <th class="current-day"></th>
+                <th>Day of week</th>
+                <th id="monday">Monday</th>
+                <th id="tuesday">Tuesday</th>
+                <th id="wednesday">Wednesday</th>
+                <th id="thursday">Thursday</th>
+                <th id="friday">Friday</th>
+                <th id="saturday">Saturday</th>
+                <th id="sunday">Sunday</th>
+            </tr>
+            <!--this is where our total free time will go-->
+            <tr>
+                <td id="time-left-today"></td>
+                <td>Free Time Left</td>
+                <td id="free-time-monday"></td>
+                <td id="free-time-tuesday"></td>
+                <td id="free-time-wednesday"></td>
+                <td id="free-time-thursday"></td>
+                <td id="free-time-friday"></td>
+                <td id="free-time-saturday"></td>
+                <td id="free-time-sunday"></td>
+            </tr>
+        </table>
+    </div>
 
     <div id="display-body">
       <!--this div encompasses are main card for the user to input-->
@@ -46,6 +77,7 @@
           <button id="find-game">Submit</button>
         </div>
       </div>
+
       <!------------------ added radio buttons as it was easier to calculate total free time --------->
         <div id="calculate-freetime">
           <div class="form-cards">
