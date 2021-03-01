@@ -16,6 +16,24 @@ $("#time-left-today").text(seperate[1] + " " + seperate[2] + " left to play vide
 
 
 
+$("#card-info-grab1").on("click", function(event) {
+    event.preventDefault();
+    $('#save-game').show()
+
+    $(".btn-yes").on ("click", function () {
+        localStorage.setItem("userGame", JSON.stringify(gameInfoStored))
+        $('#save-game').hide();
+        location.reload();
+    })
+    $(".btn-no").on ("click", function () {
+        $('#save-game').hide();
+    })
+    $(".close").on ("click", function () {
+        $('#save-game').hide()    
+    })
+})
+
+
 //------------------------------calednar javascript-------------------------------------//
 
 //------- here is the added javascript for the newly added checkboxes -----------------------//
@@ -41,6 +59,12 @@ $('#save_value').click(function() {
         dependent === 0 &&
         school === 0) {
             $("#alert-modal").show()
+            $("#modal-dismiss").on ("click", function () {
+                $('#alert-modal').hide();
+            })
+            $("#honesty-button").on ("click", function () {
+                $('#alert-modal').hide()    
+            })
         }
         
     if (total > 24) {
@@ -588,6 +612,7 @@ $("#current-date").text(today.format("YYYY-MM-DD"));
 $("#current-time").text(today.format("h:mm"))
 
 
+
 var test = document.getElementById("platform-selection" );
  
 // This handler will be executed only once when the cursor
@@ -613,3 +638,4 @@ test.addEventListener("mouseover", function( event ) {
     event.target.style.color = "";
   }, 500);
 }, false);
+
