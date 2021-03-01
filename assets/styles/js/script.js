@@ -30,6 +30,11 @@ $('#save_value').click(function() {
         total += sel[i] << 0;
         console.log(total)
     }
+    var sleep = 0
+    var work = 0
+    var dependent = 0
+    var school = 0
+    
     //if the total (which is the amount of time spend NOT gaming) is greater than 24 hours --
     //it will display text
     if (total > 24) {
@@ -38,14 +43,27 @@ $('#save_value').click(function() {
         $("#available-free-time").text("Total Free Time " + (24 - total) + " hours!");
     };
 
-    for (var j = 0; j < sel.length; j++) {
-        console.log(sel[j])
-        
-        var sleep = sel[0];
-        var work = sel[1];
-        var dependent = sel[2];
-        var school = sel[3];
+    if (sel.length){
+
+        for (var j = 0; j < sel.length; j++) {
+            console.log(sel[j])
+            if (sel[0]){
+                sleep = sel[0];
+            }
+            if (sel[1]) {
+                work = sel[1];
+            }
+            if(sel[2]){
+                dependent = sel[2];
+            }
+            if(sel[3]){
+                school = sel[3];
+            }
+            
+            
+        }
     }
+
 
     //I set it to 23 to automatically deduct eating and drinking time for the day
     monday = 23 - sleep - work - dependent - school;
@@ -64,13 +82,34 @@ $('#save_value').click(function() {
     localStorage.setItem("friday", friday);
     localStorage.setItem("saturday", saturday);
     localStorage.setItem("sunday", sunday);
+
+    console.log(monday)
+
+    if(typeof monday !== "number" && 
+        typeof tuesday !== "number" &&
+        typeof wednesday !== "number" &&
+        typeof thursday !== "number" &&
+        typeof friday !== "number" &&
+        typeof saturday !== "number" &&
+        typeof sunday !== "number") {
+            return $('#alert-modal').show();
     
+        }
+
+
+    $("#free-time-monday").text(monday);
+    $("#free-time-tuesday").text(tuesday);
+    $("#free-time-wednesday").text(wednesday);
+    $("#free-time-thursday").text(thursday);
+    $("#free-time-friday").text(friday);
+    $("#free-time-saturday").text(saturday);
+    $("#free-time-sunday").text(sunday);
     //anytime the user updates their free time, the page will reload with the new times
     // location.reload();
 })
 
 //stored values being displayed
-var mondayFreeTime = $("#free-time-monday").text(localStorage.getItem("monday") + " hours");
+$("#free-time-monday").text(localStorage.getItem("monday") + " hours");
 $("#free-time-tuesday").text(localStorage.getItem("tuesday") + " hours");
 $("#free-time-wednesday").text(localStorage.getItem("wednesday") + " hours");
 $("#free-time-thursday").text(localStorage.getItem("thursday") + " hours");
