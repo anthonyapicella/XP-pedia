@@ -211,15 +211,18 @@ $("#find-game").on("click", function(event) {
 
 
 
+
 console.log(gameNames);
 console.log(gamePlayTimes);
 console.log(gameImages);
+
 
 //loop through this
 
 var x = "If you play for 1 hour a day it will take you "
  + gamePlayTimes[0] + " days to beat";
 console.log(x)
+
 
 $("#play").append(x)
 
@@ -402,10 +405,6 @@ card3()
 card4()
 card5()
 card6()
-
-
-
-
 
 
 
