@@ -224,6 +224,8 @@ body{
 #platform-selection option:checked {
  background: red !important;
 
+}
+
 /*----------------------------------------BEG CURRENT GAME STYLING--------------------------------*/
 
 #user-current-game {

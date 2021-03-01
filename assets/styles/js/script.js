@@ -54,18 +54,15 @@ $('#save_value').click(function() {
     var dependent = 0
     var school = 0
 
-    if (sleep === 0 &&
-        work === 0 &&
-        dependent === 0 &&
-        school === 0) {
+    if (total === 0) {
             $("#alert-modal").show()
-            $("#modal-dismiss").on ("click", function () {
+            $("#modal-dismiss").on("click", function () {
                 $('#alert-modal').hide();
             })
-            $("#honesty-button").on ("click", function () {
+            $("#honesty-button").on("click", function () {
                 $('#alert-modal').hide()    
             })
-        }
+        } 
         
     if (total > 24) {
         $('#available-free-time').text("Fuggedaboutit!");
