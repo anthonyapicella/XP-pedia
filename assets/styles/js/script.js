@@ -1,6 +1,26 @@
 var gameCard = $("#game-cards");
 var currentGamePlayed = $("#user-current-game");
+var usernameModal = $("#username-modal");
 
+//function to choose username - willreload page and display username
+function chooseUsername () {
+    if (localStorage.getItem("username") == null) {
+        $("#username-modal").show();
+
+        $("#save-username").on("click", function () {
+            let username = $("#username").val();  
+            localStorage.setItem("username", username);
+            location.reload();
+            $("#username-modal").hide()
+            $(".close").on("click", function () {
+                $("#username-modal").hide()
+            })
+        })        
+    } else return;
+}
+
+chooseUsername()
+$("#user-name").text(localStorage.getItem("username"))
 
 
 //------------------------------calednar javascript-------------------------------------//

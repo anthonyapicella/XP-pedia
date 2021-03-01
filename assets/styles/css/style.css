@@ -45,6 +45,7 @@
 this holds our users avatar and our users id in one line */
 #user-info {
     display: flex;
+    margin-top: 1.5em;
 }
 
 /* this is the avatar image */
@@ -52,6 +53,7 @@ this holds our users avatar and our users id in one line */
     max-width: 100px;
     max-height: 100px;
     margin-top: 4px;
+    box-shadow: -7px -7px 0px lawngreen;
 }
 
 /* background for titles in jumbotron */
@@ -115,7 +117,7 @@ this holds our users avatar and our users id in one line */
 }
 /* --------------------------------------------------BEG. TIMELOG STYLING---------------------------------------------------- */
 
-#calendar {
+.calendar {
     background-color: var(--blueBackgroundColor);
     border: var(--globalBorder);
     box-shadow: var(--shadow);
