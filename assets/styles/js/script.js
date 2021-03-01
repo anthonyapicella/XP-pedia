@@ -240,7 +240,7 @@ function card1 () {
         gamePlayTime1: gamePlayTimes[0],
         gameImage1: gameImages[0]
     }
-    var displayRow = $("<div class='row my-5' id='card-display'></div>")
+    var displayRow = $("<div class='row my-5 card-display' id='card-info-grab1'></div>")
     var displayColumn1 = $("<div class='col-sm-3'></div>")
     var displayColumn2 = $("<div class='col-sm-9'></div>")
     var displaySearchResults1 = $("<div class='new-card'></div>")
@@ -261,10 +261,10 @@ function card1 () {
     gameCard.append(displayRow)
 
     
-    $("#card-display").on("click", function(event) {
+    $("#card-info-grab1").on("click", function(event) {
         event.preventDefault();
 
-        localStorage.setItem("savedGame", JSON.stringify(gameInfoStored1))
+        localStorage.setItem("savedGame1", JSON.stringify(gameInfoStored1))
     })
 }
 function card2 () {
@@ -273,7 +273,13 @@ function card2 () {
     } else if (gameNames[1] === undefined || gameImages[1] === undefined || gamePlayTimes[1] === undefined) {
         return;
     } else
-    var displayRow = $("<div class='row my-5' id='card-display'></div>");
+
+    var gameInfoStored2 = {
+        gameName2: gameNames[1],
+        gamePlayTime2: gamePlayTimes[1],
+        gameImage2: gameImages[1]
+    }
+    var displayRow = $("<div class='row my-5 card-display' id='card-info-grab2'></div>");
     var displayColumn1 = $("<div class='col-sm-3'></div>");
     var displayColumn2 = $("<div class='col-sm-9'></div>");
     var displaySearchResults1 = $("<div class='new-card'></div>");
@@ -292,6 +298,12 @@ function card2 () {
     displayRow.append(displayColumn1);
     displayRow.append(displayColumn2);
     gameCard.append(displayRow)
+
+    $("#card-info-grab2").on("click", function(event) {
+        event.preventDefault();
+
+        localStorage.setItem("savedGame2", JSON.stringify(gameInfoStored2))
+    })
 }
 function card3() {
     if (gameNames[2] === " " || gameImages[2] === " " || gamePlayTimes[2] === " ") {
@@ -299,7 +311,13 @@ function card3() {
     } else if (gameNames[2] === undefined || gameImages[2] === undefined || gamePlayTimes[2] === undefined) {
         return;
     } else
-    var displayRow = $("<div class='row my-5' id='card-display'></div>")
+
+    var gameInfoStored3 = {
+        gameName3: gameNames[2],
+        gamePlayTime3: gamePlayTimes[2],
+        gameImage3: gameImages[2]
+    }
+    var displayRow = $("<div class='row my-5 card-display' id='card-info-grab3'></div>")
     var displayColumn1 = $("<div class='col-sm-3'></div>")
     var displayColumn2 = $("<div class='col-sm-9'></div>")
     var displaySearchResults1 = $("<div class='new-card'></div>")
@@ -318,6 +336,13 @@ function card3() {
     displayRow.append(displayColumn1)
     displayRow.append(displayColumn2)
     gameCard.append(displayRow)
+
+    $("#card-info-grab3").on("click", function(event) {
+        event.preventDefault();
+
+        localStorage.setItem("savedGame3", JSON.stringify(gameInfoStored3))
+    })
+    
 }
 function card4() {
     if (gameNames[3] === " " || gameImages[3] === " " || gamePlayTimes[3] === " ") {
@@ -325,7 +350,13 @@ function card4() {
     } else if (gameNames[3] === undefined || gameImages[3] === undefined || gamePlayTimes[3] === undefined) {
         return;
     } else
-    var displayRow = $("<div class='row my-5' id='card-display'></div>")
+
+    var gameInfoStored4 = {
+        gameName4: gameNames[3],
+        gamePlayTime4: gamePlayTimes[3],
+        gameImage4: gameImages[3]
+    }
+    var displayRow = $("<div class='row my-5 card-display' id='card-info-grab4'></div>")
     var displayColumn1 = $("<div class='col-sm-3'></div>")
     var displayColumn2 = $("<div class='col-sm-9'></div>")
     var displaySearchResults1 = $("<div class='new-card'></div>")
@@ -344,6 +375,12 @@ function card4() {
     displayRow.append(displayColumn1)
     displayRow.append(displayColumn2)
     gameCard.append(displayRow)
+
+    $("#card-info-grab4").on("click", function(event) {
+        event.preventDefault();
+
+        localStorage.setItem("savedGame4", JSON.stringify(gameInfoStored4))
+    })
 }
 function card5() {
     if (gameNames[4] === " " || gameImages[4] === " " || gamePlayTimes[4] === " ") {
@@ -351,7 +388,14 @@ function card5() {
     } else if (gameNames[4] === undefined || gameImages[4] === undefined || gamePlayTimes[4] === undefined) {
         return;
     } else
-    var displayRow = $("<div class='row my-5' id='card-display'></div>")
+
+    var gameInfoStored5 = {
+        gameName5: gameNames[4],
+        gamePlayTime5: gamePlayTimes[4],
+        gameImage5: gameImages[4]
+    }
+    
+    var displayRow = $("<div class='row my-5 card-display' id='card-info-grab5'></div>")
     var displayColumn1 = $("<div class='col-sm-3'></div>")
     var displayColumn2 = $("<div class='col-sm-9'></div>")
     var displaySearchResults1 = $("<div class='new-card'></div>")
@@ -370,6 +414,12 @@ function card5() {
     displayRow.append(displayColumn1)
     displayRow.append(displayColumn2)
     gameCard.append(displayRow)
+
+    $("#card-info-grab5").on("click", function(event) {
+        event.preventDefault();
+
+        localStorage.setItem("savedGame5", JSON.stringify(gameInfoStored5))
+    })
 }
 function card6() {
     if (gameNames[5] === " " || gameImages[5] === " " || gamePlayTimes[5] === " ") {
@@ -377,7 +427,14 @@ function card6() {
     } else if (gameNames[5] === undefined || gameImages[5] === undefined || gamePlayTimes[5] === undefined) {
         return;
     } else
-    var displayRow = $("<div class='row my-5' id='card-display'></div>")
+
+    var gameInfoStored6 = {
+        gameName6: gameNames[5],
+        gamePlayTime6: gamePlayTimes[5],
+        gameImage6: gameImages[5]
+    }
+ 
+    var displayRow = $("<div class='row my-5 card-display' id='card-info-grab6'></div>")
     var displayColumn1 = $("<div class='col-sm-3'></div>")
     var displayColumn2 = $("<div class='col-sm-9'></div>")
     var displaySearchResults1 = $("<div class='new-card'></div>")
@@ -396,6 +453,12 @@ function card6() {
     displayRow.append(displayColumn1)
     displayRow.append(displayColumn2)
     gameCard.append(displayRow)
+
+    $("#card-info-grab6").on("click", function(event) {
+        event.preventDefault();
+
+        localStorage.setItem("savedGame6", JSON.stringify(gameInfoStored6))
+    })
 }
 
 
