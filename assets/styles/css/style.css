@@ -13,7 +13,7 @@
     justify-content: center;
     height: 1.5em;
     margin-bottom: 5px;
-    color: lawngreen;
+    font-weight: bold;
 }
 
 /* this is our websites name */
@@ -21,7 +21,7 @@
     background-color: orange;
     color: black;
     font-size: 3em;
-    font-family: 'DotGothic16', sans-serif;
+    font-family: 'Roboto Slab', serif;
     width: fit-content;
     height: fit-content;
     margin-top: 2em;
@@ -60,6 +60,8 @@ this holds our users avatar and our users id in one line */
     border: var(--globalBorder);
     border-radius: 5px;
     box-shadow: 0px 8px 13px rgb(0 255 0);
+    font-family: 'Roboto Slab', serif;
+    font-size: 35px;
 }
 
 /*titles that are in jumbotron*/
@@ -204,6 +206,7 @@ this holds our users avatar and our users id in one line */
     border: var(--globalBorder);
     border-radius: 30px;
     margin-bottom: 5px;
+    justify-content: space-between;
 }
 
 .form-cards {
@@ -217,6 +220,13 @@ this holds our users avatar and our users id in one line */
 
 /* ----------------------------------------- Styling for scheduler -------------------*/
 
+body{
+    background-color: antiquewhite;
+}
+
+
+#platform-selection option:checked {
+ background: red !important;
 
 /*----------------------------------------BEG CURRENT GAME STYLING--------------------------------*/
 
@@ -262,9 +272,11 @@ this holds our users avatar and our users id in one line */
 
 
 
+}
+
 @media screen and (max-width: 992px) {
     body {
-        background-color: gray;
+        background-color: antiquewhite;
     }
     jumbotron-fluid {
         background-image: url(https://i.pinimg.com/originals/4a/18/3c/4a183c1dcf0e901399b30ecb3e1612ae.png);
@@ -278,7 +290,7 @@ this holds our users avatar and our users id in one line */
 
 @media screen and (max-width: 768px) {
     body {
-        background-color: gray;
+        background-color: antiquewhite;
     }
     .jumbotron-fluid {
         background-color: darkgrey;
@@ -295,7 +307,7 @@ this holds our users avatar and our users id in one line */
 
 @media only screen and (max-width: 576px) {
     body {
-        background-color: yellow;
+        background-color: antiquewhite;
         background-repeat: no-repeat;
     }
     .jumbotron-fluid {
@@ -310,4 +322,24 @@ this holds our users avatar and our users id in one line */
         background-color: orange;
         color: black;
     }
+
+    #calender{
+        background-color: var(--blueBackgroundColor);
+        border: var(--globalBorder);
+        box-shadow: var(--shadow);
+        margin: 2px;
+        border-radius: 5px;
+        display: flex;
+        flex-wrap:nowrap;
+    }
+
+
+    
+
+
+
+
+
+
+
 }
