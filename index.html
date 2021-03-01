@@ -7,7 +7,8 @@
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/styles/css/style.css">
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=RocknRoll+One&display=swap" rel="stylesheet">
     <title>XP pedia</title>
 </head>
 <body>
@@ -70,7 +71,7 @@
             <p class="lead"><span class="background-titles" id="available-free-time">Your Free Time</span></p>
         </div>
     </div>
-    <div id="calendar">
+    <div id="calendar" style="overflow-x: auto ;">
         <table style="width: 100%">
             <tr>
                 <th class="current-day"></th>
@@ -115,7 +116,7 @@
         <!--this is our platform selection drop down-->
         <p><span id="choose-platform-title">Choose your Platform</span></p>
         <select class="selectpicker" multiple data-live-search="true" id="platform-selection">
-          <option selected class="" id="no-exercise" value="18">Playstation</option>
+          <option checked class="" id="no-exercise" value="18">Playstation</option>
           <option class="" id="yes-exercise" value="4">PC</option>
           <option class="" id="yes-exercise" value="1">Xbox</option>
           <option class="" id="yes-exercise" value="7">Nintendo</option>

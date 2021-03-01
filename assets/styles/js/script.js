@@ -70,7 +70,7 @@ $('#save_value').click(function() {
     if (total > 24) {
         $('#available-free-time').text("Fuggedaboutit!");
     } else {
-        $("#available-free-time").text("Total Free Time " + (24 - total) + " hours!");
+        $("#available-free-time").text("Total Free Time " + (23 - total) + " hours!");
     };
 
     
@@ -145,14 +145,28 @@ $('#save_value').click(function() {
 
 
 })
-//stored values being displayed
-$("#free-time-monday").text(localStorage.getItem("monday") + " hours");
-$("#free-time-tuesday").text(localStorage.getItem("tuesday") + " hours");
-$("#free-time-wednesday").text(localStorage.getItem("wednesday") + " hours");
-$("#free-time-thursday").text(localStorage.getItem("thursday") + " hours");
-$("#free-time-friday").text(localStorage.getItem("friday") + " hours");
-$("#free-time-saturday").text(localStorage.getItem("saturday") + " hours");
-$("#free-time-sunday").text(localStorage.getItem("sunday") + " hours");
+//stored values being displayed willnot display anything if the values are empty in local storage
+function displayHours() {
+    if (localStorage.getItem("monday") != null ||
+        localStorage.getItem("tuesday") != null ||
+        localStorage.getItem("wednesday") != null ||
+        localStorage.getItem("thursday") != null ||
+        localStorage.getItem("friday") != null ||
+        localStorage.getItem("saturday") != null ||
+        localStorage.getItem("sunday") != null
+        ){
+            $("#free-time-monday").text(localStorage.getItem("monday") + " hours");
+            $("#free-time-tuesday").text(localStorage.getItem("tuesday") + " hours");
+            $("#free-time-wednesday").text(localStorage.getItem("wednesday") + " hours");
+            $("#free-time-thursday").text(localStorage.getItem("thursday") + " hours");
+            $("#free-time-friday").text(localStorage.getItem("friday") + " hours");
+            $("#free-time-saturday").text(localStorage.getItem("saturday") + " hours");
+            $("#free-time-sunday").text(localStorage.getItem("sunday") + " hours");
+    } else return;
+}
+
+//calls displayHours function
+displayHours()
 
 
 //this function makes sure only one box is checked at a time
@@ -596,3 +610,32 @@ userGame();
 var today = moment();
 $("#current-date").text(today.format("YYYY-MM-DD"));
 $("#current-time").text(today.format("h:mm"))
+
+
+
+var test = document.getElementById("platform-selection" );
+ 
+// This handler will be executed only once when the cursor
+// moves over the unordered list
+test.addEventListener("mouseenter", function( event ) {
+  // highlight the mouseenter target
+  event.target.style.color = "red";
+
+  // reset the color after a short delay
+  setTimeout(function() {
+    event.target.style.color = "";
+  }, 500);
+}, false);
+
+// This handler will be executed every time the cursor
+// is moved over a different list item
+test.addEventListener("mouseover", function( event ) {
+  // highlight the mouseover target
+  event.target.style.color = "red";
+
+  // reset the color after a short delay
+  setTimeout(function() {
+    event.target.style.color = "";
+  }, 500);
+}, false);
+
