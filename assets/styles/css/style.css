@@ -130,12 +130,7 @@ this holds our users avatar and our users id in one line */
     box-shadow: var(--shadow);
 }
 
-
 /* --------------------------------------------------END TIMELOG STYLING---------------------------------------------------- */
-
-
-
-
 
 /* this idea will add styling for any game cards that populate after a search */
 #game-cards {
@@ -215,6 +210,7 @@ this holds our users avatar and our users id in one line */
 }
 
 
+
 /* ----------------------------------------- Styling for scheduler -------------------*/
 
 
@@ -246,8 +242,6 @@ this holds our users avatar and our users id in one line */
     border-radius: 5px;
     color: black;
     font-size: 16px;
-
-
 }
 
 #current-game-image {
@@ -259,8 +253,6 @@ this holds our users avatar and our users id in one line */
     width: fit-content;
 }
 /*----------------------------------------END CURRENT GAME STYLING--------------------------------*/
-
-
 
 @media screen and (max-width: 992px) {
     body {
@@ -274,7 +266,6 @@ this holds our users avatar and our users id in one line */
         background-repeat: no-repeat;
     }
 }
-
 
 @media screen and (max-width: 768px) {
     body {
@@ -290,8 +281,6 @@ this holds our users avatar and our users id in one line */
         background-repeat: no-repeat;
     }
 }
-
-
 
 @media only screen and (max-width: 576px) {
     body {
