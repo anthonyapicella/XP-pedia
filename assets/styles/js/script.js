@@ -451,7 +451,7 @@ test.addEventListener("mouseenter", function( event ) {
 // is moved over a different list item
 test.addEventListener("mouseover", function( event ) {
   // highlight the mouseover target
-  event.target.style.color = "grey";
+  event.target.style.color = "red";
 
   // reset the color after a short delay
   setTimeout(function() {

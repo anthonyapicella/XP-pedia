@@ -225,7 +225,11 @@ body{
 }
 
 
+#platform-selection option:checked {
+ background: red !important;
 
+
+}
 
 @media screen and (max-width: 992px) {
     body {
