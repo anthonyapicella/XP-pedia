@@ -23,9 +23,7 @@ $('#save_value').click(function() {
     var sel = $('input[type=checkbox]:checked').map(function(_, el) {
         return $(el).val();
     }).get();
-
     console.log(sel)
-
     var total = 0;
     for (var i = 0; i < sel.length; i++) {
         total += sel[i] << 0;
@@ -81,12 +79,9 @@ $("#free-time-sunday").text(localStorage.getItem("sunday") + " hours");
 
 //this function makes sure only one box is checked at a time
 $("input:checkbox").on('click', function() {
-    
     var $box = $(this);
     if ($box.is(":checked")) {
-
       var group = "input:checkbox[name='" + $box.attr("name") + "']";
-
       $(group).prop("checked", false);
       $box.prop("checked", true);
     } else {
@@ -145,12 +140,12 @@ $("#find-game").on("click", function(event) {
             console.log('else condition triggered')
             console.log(data)
 
+
+
+
             var gameNameStr = ' ';
             var playTimeStr = ' ';
             var gameImageStr = ' ';
-            
-            
-            
 
             for (var i = 0; i < data.results.length; i++) {
 
@@ -202,7 +197,7 @@ $("#find-game").on("click", function(event) {
                     // displayRow.append(displayColumn2);
                     // gameCard.append(displayRow)
 
-                    
+                    //this reloads the page
                     location.reload();
                 }
 
@@ -215,9 +210,24 @@ var gameNames = localStorage.getItem("gameNameStr").split(",");
 var gamePlayTimes = localStorage.getItem("gameTimeStr").split(",");
 var gameImages = localStorage.getItem("gameImageStr").split(",");
 
+console.log(gameNames);
+console.log(gamePlayTimes);
+console.log(gameImage);
+
+//loop through this
+
+var x = "If you play for 1 hour a day it will take you "
+ + gamePlayTimes[0] + " days to beat";
+console.log(x)
+
+
+
+for (var i = 0; i < gameNames.length; i++) {
+    console.log(gameNames[i])
+}
 var displayRow = $("<div class='row my-5' id='card-display'></div>");
-var displayColumn1 = $("<div class='col-sm-3'></div>")
-var displayColumn2 = $("<div class='col-sm-9'></div>")
+var displayColumn1 = $("<div class='col-sm-3'></div>");
+var displayColumn2 = $("<div class='col-sm-9'></div>");
 var displaySearchResults1 = $("<div class='new-card'></div>");
 var displaySearchResults2 = $("<div class='new-card'></div>");
 var displayTitle = $("<h1 class='game-title-card'></h1>");
@@ -226,6 +236,26 @@ var gameImage = $("<img id='game-image' src='" + gameImages[0] + "'>");
 
 displayTitle.text(gameNames[0]);
 displayPlayTime.text(gamePlayTimes[0]);
+displaySearchResults1.append(gameImage);
+displaySearchResults2.append(displayTitle);
+displaySearchResults2.append(displayPlayTime);
+displayColumn1.append(displaySearchResults1);
+displayColumn2.append(displaySearchResults2);
+displayRow.append(displayColumn1);
+displayRow.append(displayColumn2);
+gameCard.append(displayRow)
+
+var displayRow = $("<div class='row my-5' id='card-display'></div>");
+var displayColumn1 = $("<div class='col-sm-3'></div>");
+var displayColumn2 = $("<div class='col-sm-9'></div>");
+var displaySearchResults1 = $("<div class='new-card'></div>");
+var displaySearchResults2 = $("<div class='new-card'></div>");
+var displayTitle = $("<h1 class='game-title-card'></h1>");
+var displayPlayTime = $("<h3 class='game-play-time' name='" + gameNames[1] + "'></h3>");
+var gameImage = $("<img id='game-image' src='" + gameImages[1] + "'>");
+
+displayTitle.text(gameNames[1]);
+displayPlayTime.text(gamePlayTimes[1]);
 displaySearchResults1.append(gameImage);
 displaySearchResults2.append(displayTitle);
 displaySearchResults2.append(displayPlayTime);
