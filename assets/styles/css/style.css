@@ -275,4 +275,24 @@ body{
         background-color: orange;
         color: black;
     }
+
+    #calender{
+        background-color: var(--blueBackgroundColor);
+        border: var(--globalBorder);
+        box-shadow: var(--shadow);
+        margin: 2px;
+        border-radius: 5px;
+        display: flex;
+        flex-wrap:nowrap;
+    }
+
+
+    
+
+
+
+
+
+
+
 }
