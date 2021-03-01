@@ -1,6 +1,7 @@
 var gameCard = $("#game-cards")
 
 
+
 //------------------------------calednar javascript-------------------------------------//
 
 $(".current-day").text("Today is " + moment().format('dddd'));
@@ -210,9 +211,11 @@ var gameNames = localStorage.getItem("gameNameStr").split(",");
 var gamePlayTimes = localStorage.getItem("gameTimeStr").split(",");
 var gameImages = localStorage.getItem("gameImageStr").split(",");
 
+
+
 console.log(gameNames);
 console.log(gamePlayTimes);
-console.log(gameImage);
+console.log(gameImages);
 
 //loop through this
 
@@ -220,50 +223,200 @@ var x = "If you play for 1 hour a day it will take you "
  + gamePlayTimes[0] + " days to beat";
 console.log(x)
 
+$("#play").append(x)
 
 
-for (var i = 0; i < gameNames.length; i++) {
-    console.log(gameNames[i])
+
+
+function card1 () {
+    if (gameNames[0] === " " || gameImages[0] === " " || gamePlayTimes[0] === " ") {
+        return;
+    } else if (gameNames[0] === undefined || gameImages[0] === undefined || gamePlayTimes[0] === undefined) {
+        return;
+    } else
+
+    var gameInfoStored1 = {
+        gameName1: gameNames[0],
+        gamePlayTime1: gamePlayTimes[0],
+        gameImage1: gameImages[0]
+    }
+    var displayRow = $("<div class='row my-5' id='card-display'></div>")
+    var displayColumn1 = $("<div class='col-sm-3'></div>")
+    var displayColumn2 = $("<div class='col-sm-9'></div>")
+    var displaySearchResults1 = $("<div class='new-card'></div>")
+    var displaySearchResults2 = $("<div class='new-card'></div>")
+    var displayTitle = $("<h1 class='game-title-card'></h1>")
+    var displayPlayTime = $("<h3 class='game-play-time' name='" + gameNames[0] + "'></h3>")
+    var gameImage = $("<img id='game-image' src='" + gameImages[0] + "'>")
+
+    displayTitle.text(gameNames[0])
+    displayPlayTime.text(gamePlayTimes[0])
+    displaySearchResults1.append(gameImage)
+    displaySearchResults2.append(displayTitle)
+    displaySearchResults2.append(displayPlayTime)
+    displayColumn1.append(displaySearchResults1)
+    displayColumn2.append(displaySearchResults2)
+    displayRow.append(displayColumn1)
+    displayRow.append(displayColumn2)
+    gameCard.append(displayRow)
+
+    
+    $("#card-display").on("click", function(event) {
+        event.preventDefault();
+
+        localStorage.setItem("savedGame", JSON.stringify(gameInfoStored1))
+    })
 }
-var displayRow = $("<div class='row my-5' id='card-display'></div>");
-var displayColumn1 = $("<div class='col-sm-3'></div>");
-var displayColumn2 = $("<div class='col-sm-9'></div>");
-var displaySearchResults1 = $("<div class='new-card'></div>");
-var displaySearchResults2 = $("<div class='new-card'></div>");
-var displayTitle = $("<h1 class='game-title-card'></h1>");
-var displayPlayTime = $("<h3 class='game-play-time' name='" + gameNames[0] + "'></h3>");
-var gameImage = $("<img id='game-image' src='" + gameImages[0] + "'>");
+function card2 () {
+    if (gameNames[1] === " " || gameImages[1] === " " || gamePlayTimes[1] === " ") {
+        return;
+    } else if (gameNames[1] === undefined || gameImages[1] === undefined || gamePlayTimes[1] === undefined) {
+        return;
+    } else
+    var displayRow = $("<div class='row my-5' id='card-display'></div>");
+    var displayColumn1 = $("<div class='col-sm-3'></div>");
+    var displayColumn2 = $("<div class='col-sm-9'></div>");
+    var displaySearchResults1 = $("<div class='new-card'></div>");
+    var displaySearchResults2 = $("<div class='new-card'></div>");
+    var displayTitle = $("<h1 class='game-title-card'></h1>");
+    var displayPlayTime = $("<h3 class='game-play-time' name='" + gameNames[1] + "'></h3>");
+    var gameImage = $("<img id='game-image' src='" + gameImages[1] + "'>");
+    
+    displayTitle.text(gameNames[1]);
+    displayPlayTime.text(gamePlayTimes[1]);
+    displaySearchResults1.append(gameImage);
+    displaySearchResults2.append(displayTitle);
+    displaySearchResults2.append(displayPlayTime);
+    displayColumn1.append(displaySearchResults1);
+    displayColumn2.append(displaySearchResults2);
+    displayRow.append(displayColumn1);
+    displayRow.append(displayColumn2);
+    gameCard.append(displayRow)
+}
+function card3() {
+    if (gameNames[2] === " " || gameImages[2] === " " || gamePlayTimes[2] === " ") {
+        return;
+    } else if (gameNames[2] === undefined || gameImages[2] === undefined || gamePlayTimes[2] === undefined) {
+        return;
+    } else
+    var displayRow = $("<div class='row my-5' id='card-display'></div>")
+    var displayColumn1 = $("<div class='col-sm-3'></div>")
+    var displayColumn2 = $("<div class='col-sm-9'></div>")
+    var displaySearchResults1 = $("<div class='new-card'></div>")
+    var displaySearchResults2 = $("<div class='new-card'></div>")
+    var displayTitle = $("<h1 class='game-title-card'></h1>")
+    var displayPlayTime = $("<h3 class='game-play-time' name='" + gameNames[2] + "'></h3>")
+    var gameImage = $("<img id='game-image' src='" + gameImages[2] + "'>")
 
-displayTitle.text(gameNames[0]);
-displayPlayTime.text(gamePlayTimes[0]);
-displaySearchResults1.append(gameImage);
-displaySearchResults2.append(displayTitle);
-displaySearchResults2.append(displayPlayTime);
-displayColumn1.append(displaySearchResults1);
-displayColumn2.append(displaySearchResults2);
-displayRow.append(displayColumn1);
-displayRow.append(displayColumn2);
-gameCard.append(displayRow)
+    displayTitle.text(gameNames[2])
+    displayPlayTime.text(gamePlayTimes[2])
+    displaySearchResults1.append(gameImage)
+    displaySearchResults2.append(displayTitle)
+    displaySearchResults2.append(displayPlayTime)
+    displayColumn1.append(displaySearchResults1)
+    displayColumn2.append(displaySearchResults2)
+    displayRow.append(displayColumn1)
+    displayRow.append(displayColumn2)
+    gameCard.append(displayRow)
+}
+function card4() {
+    if (gameNames[3] === " " || gameImages[3] === " " || gamePlayTimes[3] === " ") {
+        return;
+    } else if (gameNames[3] === undefined || gameImages[3] === undefined || gamePlayTimes[3] === undefined) {
+        return;
+    } else
+    var displayRow = $("<div class='row my-5' id='card-display'></div>")
+    var displayColumn1 = $("<div class='col-sm-3'></div>")
+    var displayColumn2 = $("<div class='col-sm-9'></div>")
+    var displaySearchResults1 = $("<div class='new-card'></div>")
+    var displaySearchResults2 = $("<div class='new-card'></div>")
+    var displayTitle = $("<h1 class='game-title-card'></h1>")
+    var displayPlayTime = $("<h3 class='game-play-time' name='" + gameNames[3] + "'></h3>")
+    var gameImage = $("<img id='game-image' src='" + gameImages[3] + "'>")
 
-var displayRow = $("<div class='row my-5' id='card-display'></div>");
-var displayColumn1 = $("<div class='col-sm-3'></div>");
-var displayColumn2 = $("<div class='col-sm-9'></div>");
-var displaySearchResults1 = $("<div class='new-card'></div>");
-var displaySearchResults2 = $("<div class='new-card'></div>");
-var displayTitle = $("<h1 class='game-title-card'></h1>");
-var displayPlayTime = $("<h3 class='game-play-time' name='" + gameNames[1] + "'></h3>");
-var gameImage = $("<img id='game-image' src='" + gameImages[1] + "'>");
+    displayTitle.text(gameNames[3])
+    displayPlayTime.text(gamePlayTimes[3])
+    displaySearchResults1.append(gameImage)
+    displaySearchResults2.append(displayTitle)
+    displaySearchResults2.append(displayPlayTime)
+    displayColumn1.append(displaySearchResults1)
+    displayColumn2.append(displaySearchResults2)
+    displayRow.append(displayColumn1)
+    displayRow.append(displayColumn2)
+    gameCard.append(displayRow)
+}
+function card5() {
+    if (gameNames[4] === " " || gameImages[4] === " " || gamePlayTimes[4] === " ") {
+        return;
+    } else if (gameNames[4] === undefined || gameImages[4] === undefined || gamePlayTimes[4] === undefined) {
+        return;
+    } else
+    var displayRow = $("<div class='row my-5' id='card-display'></div>")
+    var displayColumn1 = $("<div class='col-sm-3'></div>")
+    var displayColumn2 = $("<div class='col-sm-9'></div>")
+    var displaySearchResults1 = $("<div class='new-card'></div>")
+    var displaySearchResults2 = $("<div class='new-card'></div>")
+    var displayTitle = $("<h1 class='game-title-card'></h1>")
+    var displayPlayTime = $("<h3 class='game-play-time' name='" + gameNames[4] + "'></h3>")
+    var gameImage = $("<img id='game-image' src='" + gameImages[4] + "'>")
 
-displayTitle.text(gameNames[1]);
-displayPlayTime.text(gamePlayTimes[1]);
-displaySearchResults1.append(gameImage);
-displaySearchResults2.append(displayTitle);
-displaySearchResults2.append(displayPlayTime);
-displayColumn1.append(displaySearchResults1);
-displayColumn2.append(displaySearchResults2);
-displayRow.append(displayColumn1);
-displayRow.append(displayColumn2);
-gameCard.append(displayRow)
+    displayTitle.text(gameNames[4])
+    displayPlayTime.text(gamePlayTimes[4])
+    displaySearchResults1.append(gameImage)
+    displaySearchResults2.append(displayTitle)
+    displaySearchResults2.append(displayPlayTime)
+    displayColumn1.append(displaySearchResults1)
+    displayColumn2.append(displaySearchResults2)
+    displayRow.append(displayColumn1)
+    displayRow.append(displayColumn2)
+    gameCard.append(displayRow)
+}
+function card6() {
+    if (gameNames[5] === " " || gameImages[5] === " " || gamePlayTimes[5] === " ") {
+        return;
+    } else if (gameNames[5] === undefined || gameImages[5] === undefined || gamePlayTimes[5] === undefined) {
+        return;
+    } else
+    var displayRow = $("<div class='row my-5' id='card-display'></div>")
+    var displayColumn1 = $("<div class='col-sm-3'></div>")
+    var displayColumn2 = $("<div class='col-sm-9'></div>")
+    var displaySearchResults1 = $("<div class='new-card'></div>")
+    var displaySearchResults2 = $("<div class='new-card'></div>")
+    var displayTitle = $("<h1 class='game-title-card'></h1>")
+    var displayPlayTime = $("<h3 class='game-play-time' name='" + gameNames[5] + "'></h3>")
+    var gameImage = $("<img id='game-image' src='" + gameImages[5] + "'>")
+
+    displayTitle.text(gameNames[5])
+    displayPlayTime.text(gamePlayTimes[5])
+    displaySearchResults1.append(gameImage)
+    displaySearchResults2.append(displayTitle)
+    displaySearchResults2.append(displayPlayTime)
+    displayColumn1.append(displaySearchResults1)
+    displayColumn2.append(displaySearchResults2)
+    displayRow.append(displayColumn1)
+    displayRow.append(displayColumn2)
+    gameCard.append(displayRow)
+}
+
+
+
+//may store card functions into an object and add an on click event for thos 
+
+
+
+
+
+card1()
+card2()
+card3()
+card4()
+card5()
+card6()
+
+
+
+
+
 
 
 console.log(gameNames[0]);
