@@ -218,6 +218,49 @@ this holds our users avatar and our users id in one line */
 /* ----------------------------------------- Styling for scheduler -------------------*/
 
 
+/*----------------------------------------BEG CURRENT GAME STYLING--------------------------------*/
+
+#user-current-game {
+    width: 200px;
+    max-width: 200px;
+    height: 200px;
+    max-height: 200px;
+}
+
+#current-game-title {
+    text-shadow: 1px 1px 1px lawngreen;
+    background-color: rgba(255, 165, 0, .8);
+    border: var(--globalBorder);
+    box-shadow: var(--shadow);
+    border-radius: 5px;
+    color: black;
+    font-size: 16px;
+}
+
+#current-game-play-time {
+    color: black;
+    text-shadow: 1px 1px 1px lawngreen;
+    background-color: rgba(255, 165, 0, .8);
+    border: var(--globalBorder);
+    box-shadow: var(--shadow);
+    border-radius: 5px;
+    color: black;
+    font-size: 16px;
+
+
+}
+
+#current-game-image {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+#current-wrapper {
+    width: fit-content;
+}
+/*----------------------------------------END CURRENT GAME STYLING--------------------------------*/
+
+
 
 @media screen and (max-width: 992px) {
     body {
