@@ -1,4 +1,5 @@
-var gameCard = $("#game-cards")
+var gameCard = $("#game-cards");
+var currentGamePlayed = $("#user-current-game");
 
 
 
@@ -47,6 +48,7 @@ $('#save_value').click(function() {
     } else {
         $("#available-free-time").text("Total Free Time " + (24 - total) + " hours!");
     };
+
     
     if (sel.length){
     
@@ -67,6 +69,7 @@ $('#save_value').click(function() {
                 
                 
         }
+
     }
 
 
@@ -116,6 +119,7 @@ $('#save_value').click(function() {
     //anytime the user updates their free time, the page will reload with the new times
     // location.reload();
 
+
 })
 //stored values being displayed
 $("#free-time-monday").text(localStorage.getItem("monday") + " hours");
@@ -125,6 +129,7 @@ $("#free-time-thursday").text(localStorage.getItem("thursday") + " hours");
 $("#free-time-friday").text(localStorage.getItem("friday") + " hours");
 $("#free-time-saturday").text(localStorage.getItem("saturday") + " hours");
 $("#free-time-sunday").text(localStorage.getItem("sunday") + " hours");
+
 
 //this function makes sure only one box is checked at a time
 $("input:checkbox").on('click', function() {
@@ -137,20 +142,18 @@ $("input:checkbox").on('click', function() {
       $box.prop("checked", false);
     }
   });
-//------- here is where the added javascript for the newly added checkboxes ends -----------------------//
 
-
-
-//platforms default selected to ps4
+//default platform selection
 var platforms = ["18"];
 
+//allows the user to select a platform
 $("#platform-selection").on("click", function (event) {
     event.preventDefault();
     platforms = $("#platform-selection").val();
     console.log($("#platform-selection").val())
 })
 
-
+//grabs the game information that is searched for
 function getGameAPI(searchTerm) {
     //joins are platforms selection
     var platformsJoined = platforms.join(",");
@@ -189,18 +192,13 @@ $("#find-game").on("click", function(event) {
             console.log('else condition triggered')
             console.log(data)
 
-
-
-
             var gameNameStr = ' ';
             var playTimeStr = ' ';
             var gameImageStr = ' ';
 
             for (var i = 0; i < data.results.length; i++) {
-
-                
+    
                 if (data.results[i].playtime > 0) {
-
 
                     //puts game names into string and stores into local storage
                     gameNameStr += data.results[i].name + ", ";
@@ -214,37 +212,11 @@ $("#find-game").on("click", function(event) {
                     gameImageStr += data.results[i].background_image + ", ";
                     localStorage.setItem("gameImageStr", gameImageStr);
 
-                    // console.log(gameNameStr)
-                    // console.log(playTimeStr)
-                    // console.log(gameImageStr)
-
-                    
-                    
-
+                    //console log our search results
                     console.log(data.results[i].name);
                     console.log(data.results[i].playtime);
                     console.log(data.results[i].released);
                     console.log(data.results[i].background_image)
-                      
-                    // var displayRow = $("<div class='row my-5' id='card-display'></div>");
-                    // var displayColumn1 = $("<div class='col-sm-3'></div>")
-                    // var displayColumn2 = $("<div class='col-sm-9'></div>")
-                    // var displaySearchResults1 = $("<div class='new-card'></div>");
-                    // var displaySearchResults2 = $("<div class='new-card'></div>");
-                    // var displayTitle = $("<h1 class='game-title-card'></h1>");
-                    // var displayPlayTime = $("<h3 class='game-play-time' name='" + data.results[i].playtime + "'></h3>");
-                    // var gameImage = $("<img id='game-image' src='" + data.results[i].background_image + "'>");
-                    
-                    // displayTitle.text(data.results[i].name);
-                    // displayPlayTime.text(data.results[i].playtime);
-                    // displaySearchResults1.append(gameImage);
-                    // displaySearchResults2.append(displayTitle);
-                    // displaySearchResults2.append(displayPlayTime);
-                    // displayColumn1.append(displaySearchResults1);
-                    // displayColumn2.append(displaySearchResults2);
-                    // displayRow.append(displayColumn1);
-                    // displayRow.append(displayColumn2);
-                    // gameCard.append(displayRow)
 
                     //this reloads the page
                     location.reload();
@@ -255,26 +227,10 @@ $("#find-game").on("click", function(event) {
     })
 })
 
+//global variables that grab stored search results for game the user is searching for
 var gameNames = localStorage.getItem("gameNameStr").split(",");
 var gamePlayTimes = localStorage.getItem("gameTimeStr").split(",");
 var gameImages = localStorage.getItem("gameImageStr").split(",");
-
-
-
-console.log(gameNames);
-console.log(gamePlayTimes);
-console.log(gameImages);
-
-//loop through this
-
-var x = "If you play for 1 hour a day it will take you "
- + gamePlayTimes[0] + " days to beat";
-console.log(x)
-
-$("#play").append(x)
-
-
-
 
 function card1 () {
     if (gameNames[0] === " " || gameImages[0] === " " || gamePlayTimes[0] === " ") {
@@ -283,12 +239,12 @@ function card1 () {
         return;
     } else
 
-    var gameInfoStored1 = {
-        gameName1: gameNames[0],
-        gamePlayTime1: gamePlayTimes[0],
-        gameImage1: gameImages[0]
+    var gameInfoStored = {
+        gameName: gameNames[0],
+        gamePlayTime: gamePlayTimes[0],
+        gameImage: gameImages[0]
     }
-    var displayRow = $("<div class='row my-5' id='card-display'></div>")
+    var displayRow = $("<div class='row my-5 card-display' id='card-info-grab1'></div>")
     var displayColumn1 = $("<div class='col-sm-3'></div>")
     var displayColumn2 = $("<div class='col-sm-9'></div>")
     var displaySearchResults1 = $("<div class='new-card'></div>")
@@ -309,10 +265,21 @@ function card1 () {
     gameCard.append(displayRow)
 
     
-    $("#card-display").on("click", function(event) {
+    $("#card-info-grab1").on("click", function(event) {
         event.preventDefault();
+        $('#save-game').show()
 
-        localStorage.setItem("savedGame", JSON.stringify(gameInfoStored1))
+        $(".btn-yes").on ("click", function () {
+            localStorage.setItem("userGame", JSON.stringify(gameInfoStored))
+            $('#save-game').hide();
+            location.reload();
+        })
+        $(".btn-no").on ("click", function () {
+            $('#save-game').hide();
+        })
+        $(".close").on ("click", function () {
+            $('#save-game').hide()    
+        })
     })
 }
 function card2 () {
@@ -321,7 +288,13 @@ function card2 () {
     } else if (gameNames[1] === undefined || gameImages[1] === undefined || gamePlayTimes[1] === undefined) {
         return;
     } else
-    var displayRow = $("<div class='row my-5' id='card-display'></div>");
+
+    var gameInfoStored = {
+        gameName: gameNames[1],
+        gamePlayTime: gamePlayTimes[1],
+        gameImage: gameImages[1]
+    }
+    var displayRow = $("<div class='row my-5 card-display' id='card-info-grab2'></div>");
     var displayColumn1 = $("<div class='col-sm-3'></div>");
     var displayColumn2 = $("<div class='col-sm-9'></div>");
     var displaySearchResults1 = $("<div class='new-card'></div>");
@@ -340,6 +313,23 @@ function card2 () {
     displayRow.append(displayColumn1);
     displayRow.append(displayColumn2);
     gameCard.append(displayRow)
+
+    $("#card-info-grab2").on("click", function(event) {
+        event.preventDefault();
+        $('#save-game').show()
+
+        $(".btn-yes").on ("click", function () {
+            localStorage.setItem("userGame", JSON.stringify(gameInfoStored))
+            $('#save-game').hide();
+            location.reload();
+        })
+        $(".btn-no").on ("click", function () {
+            $('#save-game').hide();
+        })
+        $(".close").on ("click", function () {
+            $('#save-game').hide()    
+        })
+    })
 }
 function card3() {
     if (gameNames[2] === " " || gameImages[2] === " " || gamePlayTimes[2] === " ") {
@@ -347,7 +337,13 @@ function card3() {
     } else if (gameNames[2] === undefined || gameImages[2] === undefined || gamePlayTimes[2] === undefined) {
         return;
     } else
-    var displayRow = $("<div class='row my-5' id='card-display'></div>")
+
+    var gameInfoStored = {
+        gameName: gameNames[2],
+        gamePlayTime: gamePlayTimes[2],
+        gameImage: gameImages[2]
+    }
+    var displayRow = $("<div class='row my-5 card-display' id='card-info-grab3'></div>")
     var displayColumn1 = $("<div class='col-sm-3'></div>")
     var displayColumn2 = $("<div class='col-sm-9'></div>")
     var displaySearchResults1 = $("<div class='new-card'></div>")
@@ -366,6 +362,24 @@ function card3() {
     displayRow.append(displayColumn1)
     displayRow.append(displayColumn2)
     gameCard.append(displayRow)
+
+    $("#card-info-grab3").on("click", function(event) {
+        event.preventDefault();
+        $('#save-game').show()
+
+        $(".btn-yes").on ("click", function () {
+            localStorage.setItem("userGame", JSON.stringify(gameInfoStored))
+            $('#save-game').hide();
+            location.reload();
+        })
+        $(".btn-no").on ("click", function () {
+            $('#save-game').hide();
+        })
+        $(".close").on ("click", function () {
+            $('#save-game').hide()    
+        })
+    })
+    
 }
 function card4() {
     if (gameNames[3] === " " || gameImages[3] === " " || gamePlayTimes[3] === " ") {
@@ -373,7 +387,13 @@ function card4() {
     } else if (gameNames[3] === undefined || gameImages[3] === undefined || gamePlayTimes[3] === undefined) {
         return;
     } else
-    var displayRow = $("<div class='row my-5' id='card-display'></div>")
+
+    var gameInfoStored = {
+        gameName: gameNames[3],
+        gamePlayTime: gamePlayTimes[3],
+        gameImage: gameImages[3]
+    }
+    var displayRow = $("<div class='row my-5 card-display' id='card-info-grab4'></div>")
     var displayColumn1 = $("<div class='col-sm-3'></div>")
     var displayColumn2 = $("<div class='col-sm-9'></div>")
     var displaySearchResults1 = $("<div class='new-card'></div>")
@@ -392,6 +412,23 @@ function card4() {
     displayRow.append(displayColumn1)
     displayRow.append(displayColumn2)
     gameCard.append(displayRow)
+
+    $("#card-info-grab4").on("click", function(event) {
+        event.preventDefault();
+        $('#save-game').show()
+
+        $(".btn-yes").on ("click", function () {
+            localStorage.setItem("userGame", JSON.stringify(gameInfoStored))
+            $('#save-game').hide();
+            location.reload();
+        })
+        $(".btn-no").on ("click", function () {
+            $('#save-game').hide();
+        })
+        $(".close").on ("click", function () {
+            $('#save-game').hide()    
+        })
+    })
 }
 function card5() {
     if (gameNames[4] === " " || gameImages[4] === " " || gamePlayTimes[4] === " ") {
@@ -399,7 +436,14 @@ function card5() {
     } else if (gameNames[4] === undefined || gameImages[4] === undefined || gamePlayTimes[4] === undefined) {
         return;
     } else
-    var displayRow = $("<div class='row my-5' id='card-display'></div>")
+
+    var gameInfoStored = {
+        gameName: gameNames[4],
+        gamePlayTime: gamePlayTimes[4],
+        gameImage: gameImages[4]
+    }
+
+    var displayRow = $("<div class='row my-5 card-display' id='card-info-grab5'></div>")
     var displayColumn1 = $("<div class='col-sm-3'></div>")
     var displayColumn2 = $("<div class='col-sm-9'></div>")
     var displaySearchResults1 = $("<div class='new-card'></div>")
@@ -418,6 +462,23 @@ function card5() {
     displayRow.append(displayColumn1)
     displayRow.append(displayColumn2)
     gameCard.append(displayRow)
+
+    $("#card-info-grab5").on("click", function(event) {
+        event.preventDefault();
+        $('#save-game').show()
+
+        $(".btn-yes").on ("click", function () {
+            localStorage.setItem("userGame", JSON.stringify(gameInfoStored))
+            $('#save-game').hide();
+            location.reload();
+        })
+        $(".btn-no").on ("click", function () {
+            $('#save-game').hide();
+        })
+        $(".close").on ("click", function () {
+            $('#save-game').hide()    
+        })
+    })
 }
 function card6() {
     if (gameNames[5] === " " || gameImages[5] === " " || gamePlayTimes[5] === " ") {
@@ -425,7 +486,14 @@ function card6() {
     } else if (gameNames[5] === undefined || gameImages[5] === undefined || gamePlayTimes[5] === undefined) {
         return;
     } else
-    var displayRow = $("<div class='row my-5' id='card-display'></div>")
+
+    var gameInfoStored = {
+        gameName: gameNames[5],
+        gamePlayTime: gamePlayTimes[5],
+        gameImage: gameImages[5]
+    }
+ 
+    var displayRow = $("<div class='row my-5 card-display' id='card-info-grab6'></div>")
     var displayColumn1 = $("<div class='col-sm-3'></div>")
     var displayColumn2 = $("<div class='col-sm-9'></div>")
     var displaySearchResults1 = $("<div class='new-card'></div>")
@@ -444,16 +512,26 @@ function card6() {
     displayRow.append(displayColumn1)
     displayRow.append(displayColumn2)
     gameCard.append(displayRow)
+
+    $("#card-info-grab6").on("click", function(event) {
+        event.preventDefault();
+        $('#save-game').show()
+
+        $(".btn-yes").on ("click", function () {
+            localStorage.setItem("userGame", JSON.stringify(gameInfoStored))
+            $('#save-game').hide();
+            location.reload();
+        })
+        $(".btn-no").on ("click", function () {
+            $('#save-game').hide();
+        })
+        $(".close").on ("click", function () {
+            $('#save-game').hide()    
+        })
+    })
 }
 
-
-
-//may store card functions into an object and add an on click event for thos 
-
-
-
-
-
+//functions to display search results into cards called here
 card1()
 card2()
 card3()
@@ -462,18 +540,33 @@ card5()
 card6()
 
 
+function userGame() {
 
+    var userCurrentGame = JSON.parse(localStorage.getItem("userGame"));
+ 
+    var displayRow = $("<div id='current-wrapper'></div>")
+    var displayColumn1 = $("<div></div>")
+    var displayColumn2 = $("<div></div>")
+    var displaySearchResults1 = $("<div></div>")
+    var displaySearchResults2 = $("<div></div>")
+    var displayTitle = $("<h1 id='current-game-title'></h1>")
+    var displayPlayTime = $("<h3 id='current-game-play-time'></h3>")
+    var gameImage = $("<img id='current-game-image' src='" + userCurrentGame.gameImage + "'>")
 
+    displayTitle.text(userCurrentGame.gameName)
+    displayPlayTime.text(userCurrentGame.gamePlayTime + " hours to beat!")
+    displaySearchResults1.append(gameImage)
+    displaySearchResults2.append(displayTitle)
+    displaySearchResults1.append(displayPlayTime)
+    displayColumn2.append(displaySearchResults1)
+    displayColumn1.append(displaySearchResults2)
+    displayRow.append(displayColumn1)
+    displayRow.append(displayColumn2)
+    currentGamePlayed.append(displayRow)
+}
 
-
-
-console.log(gameNames[0]);
-console.log(gamePlayTimes[0]);
-console.log(gameImages[0])
-
-
-
-
+//function that puts user game under user id
+userGame();
 
 //moments date
 var today = moment();
