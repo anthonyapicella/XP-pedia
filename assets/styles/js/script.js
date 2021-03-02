@@ -646,3 +646,10 @@ test.addEventListener("mouseover", function( event ) {
     event.target.style.color = "";
   }, 500);
 }, false);
+
+
+// function myFunction() {
+//     document.getElementById("#game-cards").style.cssText = "display: flex; justify-content-end";
+//     object.style.cssText.myFunction
+//   }
+ 
