@@ -115,7 +115,7 @@ this holds our users avatar and our users id in one line */
 }
 /* --------------------------------------------------BEG. TIMELOG STYLING---------------------------------------------------- */
 
-#calendar {
+#calendar .mytable td {
     background-color: var(--blueBackgroundColor);
     border: var(--globalBorder);
     box-shadow: var(--shadow);
@@ -314,6 +314,11 @@ body{
 	border:1px solid #000;
 	padding:10px;
 	vertical-align:top;
+    background-color: var(--blueBackgroundColor);
+    border: var(--globalBorder);
+    box-shadow: var(--shadow);
+    margin: 10px;
+    border-radius: 5px;
 }
 p{margin:0 0 1em}
 
