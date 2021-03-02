@@ -430,7 +430,13 @@ body{
     text-shadow: 1px 1px 1px rgb(0 255 0 / 50%);
     margin-bottom: .5em;
     text-align: center;
+    min-width: 110px;
+    min-height: 70px;
 
+}
+
+#schedule-title {
+    text-align: center;
 }
 
 
@@ -538,6 +544,7 @@ body{
             display: flex;
             justify-content: space-between;
             align-content:flex-start;
+            font-size: 12px;
         }
             
         #main-card {
