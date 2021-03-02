@@ -14,10 +14,12 @@
 <body>
     <!-- added current date to the top of the jumbo tron -->
     <div id="date">
+      <p id="time-left"></p>
       <p id="current-date"></p>
       <p id="current-time"></p>
     </div>
     <!--username modal-->
+
     <div class="modal" tabindex="-1" role="dialog" id="username-modal">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -93,43 +95,35 @@
     </div>
 
     <!--this is our seven day calendar-->
-    <div class="calendar" style="overflow-x: auto ;">
-        <table style="width: 100%">
-            <tr>
-                <th class="current-day"></th>
-                <th>Day of week</th>
-                <th id="monday">Monday</th>
-                <th id="tuesday">Tuesday</th>
-                <th id="wednesday">Wednesday</th>
-                <th id="thursday">Thursday</th>
-                <th id="friday">Friday</th>
-                <th id="saturday">Saturday</th>
-                <th id="sunday">Sunday</th>
-            </tr>
-            <!--this is where our total free time will go-->
-            <tr>
-                <td id="time-left-today"></td>
-                <td>Free Time Left</td>
-                <td id="free-time-monday"></td>
-                <td id="free-time-tuesday"></td>
-                <td id="free-time-wednesday"></td>
-                <td id="free-time-thursday"></td>
-                <td id="free-time-friday"></td>
-                <td id="free-time-saturday"></td>
-                <td id="free-time-sunday"></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>Time you should game for</td>
-                <td id="monday-slot"></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
+    <div class="row justify-content-end">
+        <div class="col-1 day-card">
+            <div id="monday">Monday</div>
+            <div id="free-time-monday"></div>
+        </div>
+        <div class="col-1 day-card">
+            <div id="tuesday">Tuesday</div>
+            <div id="free-time-tuesday"></div>
+        </div>
+        <div class="col-1 day-card">
+            <div id="wednesday">Wednesday</div>
+            <div id="free-time-wednesday"></div>
+        </div>
+        <div class="col-1 day-card">
+            <div id="thursday">Thursday</div>
+            <div id="free-time-thursday"></div>
+        </div>
+        <div class="col-1 day-card">
+            <div id="friday">Friday</div>
+            <div id="free-time-friday"></div>
+        </div>
+        <div class="col-1 day-card">
+            <div id="saturday">Saturday</div>
+            <div id="free-time-saturday"></div>
+        </div>
+        <div class="col-1 day-card">
+            <div id="sunday">Sunday</div>
+            <div id="free-time-sunday"></div>
+        </div>
     </div>
 
     <div id="display-body">

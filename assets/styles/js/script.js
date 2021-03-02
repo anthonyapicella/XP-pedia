@@ -28,9 +28,11 @@ $("#user-name").text(localStorage.getItem("username"))
 $(".current-day").text("Today is " + moment().format('dddd'));
 // $("#time-left-today").text("End of day is " + moment().endOf('day').fromNow());
 
+
+
 //using moment we calculate how much time we have left in the day and we dispaly it in a string//
 var seperate = moment().endOf('day').fromNow().split(" ");
-$("#time-left-today").text(seperate[1] + " " + seperate[2] + " left to play video games");
+$("#time-left").text(seperate[1] + " " + seperate[2] + " left to play video games");
 
 //variables for hours in day - minus the average time it takes to eat and drink
 
@@ -586,10 +588,7 @@ function userGame() {
 //function that puts user game under user id
 userGame();
 
-//moments date
-var today = moment();
-$("#current-date").text(today.format("YYYY-MM-DD"));
-$("#current-time").text(today.format("h:mm"))
+
 
 var test = document.getElementById("platform-selection" );
  
