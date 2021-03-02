@@ -3,7 +3,6 @@ var currentGamePlayed = $("#user-current-game");
 var usernameModal = $("#username-modal");
 var submitDays = $("#submit-days")
 
-displayStuff()
 
 
 //function to choose username - willreload page and display username
@@ -38,6 +37,7 @@ $(".current-day").text("Today is " + moment().format('dddd'));
 var seperate = moment().endOf('day').fromNow().split(" ");
 var timeLeft = $("#time-left").text(seperate[1] + " " + seperate[2] + " left to play video games");
 
+//calculates tiem to beat in x amount of days
 submitDays.on("click", function timeBeatGame() {
     // let timeLeft = seperate[1]
     var userCurrentGame = JSON.parse(localStorage.getItem("userGame"));
@@ -56,11 +56,24 @@ submitDays.on("click", function timeBeatGame() {
     
 })
 
-function displayStuff () {
-    var time = localStorage.getItem("timeSpentperDay")
-    var days = localStorage.getItem("days")
 
-    $("#beat-game").text("If you spend " + time + " hours per day playing \nthis game you will beat it in " + days + " days!")
+displayStuff()
+
+function displayStuff () {
+    var timeStored = localStorage.getItem("timeSpentperDay")
+    var daysStored = localStorage.getItem("days")
+    if (localStorage.getItem("userGame") == null) {
+        $("#beat-game").text("Please choose a Game")
+    }
+    
+    if (localStorage.getItem("userGame") != null) {
+        $("#beat-game").text("Enter number of days you want to spend beating this game")
+    }
+    
+    if(localStorage.getItem("days") != null) {
+        $("#beat-game").text("If you spend " + timeStored + " hours per day playing \nthis game you will beat it in " + daysStored + " days!")
+
+    }
 
 }
 
