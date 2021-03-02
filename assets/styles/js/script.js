@@ -35,7 +35,7 @@ $("#time-left-today").text(seperate[1] + " " + seperate[2] + " left to play vide
 //variables for hours in day - minus the average time it takes to eat and drink
 
 
-
+//this is our click event for our modal and what is ran when it appears.
 $("#card-info-grab1").on("click", function(event) {
     event.preventDefault();
     $('#save-game').show()
@@ -53,21 +53,18 @@ $("#card-info-grab1").on("click", function(event) {
     })
 })
 
-
-//------------------------------calednar javascript-------------------------------------//
-
-//------- here is the added javascript for the newly added checkboxes -----------------------//
-
 //final value calculated here once the user checks their options and clicks the save button
 $('#save_value').click(function() {
+
+    //this variable checks all checkbox inputs if they are checked and returns their value
     var sel = $('input[type=checkbox]:checked').map(function(_, el) {
         return $(el).val();
     }).get();
-    console.log(sel)
+
     var total = 0;
+    //loops through our checkboxes and adds the values to the total (values in html represent the hours per item)
     for (var i = 0; i < sel.length; i++) {
         total += sel[i] << 0;
-        console.log(total)
     }
     var sleep = 0
     var work = 0
@@ -83,18 +80,10 @@ $('#save_value').click(function() {
                 $('#alert-modal').hide()    
             })
         } 
-        
-    if (total > 24) {
-        $('#available-free-time').text("Fuggedaboutit!");
-    } else {
-        $("#available-free-time").text("Total Free Time " + (23 - total) + " hours!");
-    };
 
-    
     if (sel.length){
-    
         for (var j = 0; j < sel.length; j++) {
-            console.log(sel[j])
+
             if (sel[0]){
                 sleep = sel[0];
             }
@@ -106,17 +95,9 @@ $('#save_value').click(function() {
             }
             if(sel[3]){
                 school = sel[3];
-            }
-                
-                
+            }                
         }
-
     }
-
-
-    //if the total (which is the amount of time spend NOT gaming) is greater than 24 hours --
-    //it will display text
-
 
     //I set it to 23 to automatically deduct eating and drinking time for the day
     monday = 23 - sleep - work - dependent - school;
@@ -136,30 +117,14 @@ $('#save_value').click(function() {
     localStorage.setItem("saturday", saturday);
     localStorage.setItem("sunday", sunday);
 
-    console.log(monday)
-
-    // if(typeof monday !== "number" && 
-    //     typeof tuesday !== "number" &&
-    //     typeof wednesday !== "number" &&
-    //     typeof thursday !== "number" &&
-    //     typeof friday !== "number" &&
-    //     typeof saturday !== "number" &&
-    //     typeof sunday !== "number") {
-    //        $('#alert-modal').show();
-    
-    //     }
-
-
-    $("#free-time-monday").text(monday);
-    $("#free-time-tuesday").text(tuesday);
-    $("#free-time-wednesday").text(wednesday);
-    $("#free-time-thursday").text(thursday);
-    $("#free-time-friday").text(friday);
-    $("#free-time-saturday").text(saturday);
-    $("#free-time-sunday").text(sunday);
-    //anytime the user updates their free time, the page will reload with the new times
-    // location.reload();
-
+    //this displays our free hours 
+    $("#free-time-monday").text(monday + " hours");
+    $("#free-time-tuesday").text(tuesday + " hours");
+    $("#free-time-wednesday").text(wednesday + " hours");
+    $("#free-time-thursday").text(thursday + " hours");
+    $("#free-time-friday").text(friday + " hours");
+    $("#free-time-saturday").text(saturday + " hours");
+    $("#free-time-sunday").text(sunday + " hours");
 
 })
 //stored values being displayed willnot display anything if the values are empty in local storage
@@ -184,7 +149,6 @@ function displayHours() {
 
 //calls displayHours function
 displayHours()
-
 
 //this function makes sure only one box is checked at a time
 $("input:checkbox").on('click', function() {
@@ -276,7 +240,6 @@ $("#find-game").on("click", function(event) {
                     //this reloads the page
                     location.reload();
                 }
-
             }
         }
     })
@@ -287,6 +250,7 @@ var gameNames = localStorage.getItem("gameNameStr").split(",");
 var gamePlayTimes = localStorage.getItem("gameTimeStr").split(",");
 var gameImages = localStorage.getItem("gameImageStr").split(",");
 
+//each function will pull a card unless the string stored is empty or undefined
 function card1 () {
     if (gameNames[0] === " " || gameImages[0] === " " || gamePlayTimes[0] === " ") {
         return;
@@ -318,7 +282,6 @@ function card1 () {
     displayRow.append(displayColumn1)
     displayRow.append(displayColumn2)
     gameCard.append(displayRow)
-
     
     $("#card-info-grab1").on("click", function(event) {
         event.preventDefault();
@@ -628,8 +591,6 @@ var today = moment();
 $("#current-date").text(today.format("YYYY-MM-DD"));
 $("#current-time").text(today.format("h:mm"))
 
-
-
 var test = document.getElementById("platform-selection" );
  
 // This handler will be executed only once when the cursor
@@ -655,4 +616,3 @@ test.addEventListener("mouseover", function( event ) {
     event.target.style.color = "";
   }, 500);
 }, false);
-
