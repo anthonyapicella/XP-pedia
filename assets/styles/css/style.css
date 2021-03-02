@@ -137,9 +137,10 @@ this holds our users avatar and our users id in one line */
 /* --------------------------------------------------END TIMELOG STYLING---------------------------------------------------- */
 
 /* this idea will add styling for any game cards that populate after a search */
-#game-cards {
+#game-cards{
     display: flex;
     flex-wrap: wrap;
+    justify-content: end;
     padding-left: 1em;
     box-shadow: var(--shadow);
 
@@ -157,7 +158,7 @@ this holds our users avatar and our users id in one line */
 }
 
 /* this id holds our displayrow where our content populates (its what Wilson created) */
-.card-display {
+/* .card-display {
     border: var(--globalBorder);
     background-color: orange;
     padding: 5px;
@@ -165,7 +166,7 @@ this holds our users avatar and our users id in one line */
     width: 23em;
     border-radius: 5px;
     margin: 0 auto;
-}
+} */
 
 /* this is the stying for the new card class that is attached to both of our elements when a games informaiton is drawn */
 .new-card {
@@ -203,7 +204,7 @@ this holds our users avatar and our users id in one line */
     border: var(--globalBorder);
     border-radius: 30px;
     margin-bottom: 5px;
-    justify-content: space-between;
+    
 }
 
 .form-cards {
@@ -266,6 +267,38 @@ body{
 #current-wrapper {
     width: fit-content;
 }
+
+.day-card{
+    font-weight: 500;
+    background-color: var(--blueBackgroundColor);
+    margin: 0 auto;
+    padding: .5em;
+    border: var(--globalBorder);
+    border-radius: 10px;
+    color: black;
+    text-shadow: 1px 1px 1px rgb(0 255 0 / 50%);
+    margin-bottom: .5em;
+    text-align: center;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*----------------------------------------END CURRENT GAME STYLING--------------------------------*/
 
 
@@ -325,9 +358,40 @@ body{
         flex-wrap:nowrap;
     }
 
+        .day-card{
+            font-weight: 500;
+            background-color: var(--blueBackgroundColor);
+            margin: 0 auto;
+            padding: .5em;
+            border: var(--globalBorder);
+            border-radius: 10px;
+            color: black;
+            text-shadow: 1px 1px 1px rgb(0 255 0 / 50%);
+            margin-bottom: .5em;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-content:flex-start;
+        }
+            
+        #main-card {
+    background-color: var(--blueBackgroundColor);
+    width: 22%;
+    padding: 10px 10px;
+    display: block;
+    text-align: center;
+    margin: 0 10px 5px 10px;
+    border: var(--globalBorder);
+    border-radius: 30px;
+    max-height: 450px;
+    font-size: 12px;
+}
 
-    
 
+    .justify-content-center , col{
+     display: table-row-group;
+      
+  }
 
 
 
