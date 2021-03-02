@@ -1,6 +1,10 @@
 var gameCard = $("#game-cards");
 var currentGamePlayed = $("#user-current-game");
 var usernameModal = $("#username-modal");
+var submitDays = $("#submit-days")
+
+displayStuff()
+
 
 //function to choose username - willreload page and display username
 function chooseUsername () {
@@ -32,7 +36,34 @@ $(".current-day").text("Today is " + moment().format('dddd'));
 
 //using moment we calculate how much time we have left in the day and we dispaly it in a string//
 var seperate = moment().endOf('day').fromNow().split(" ");
-$("#time-left").text(seperate[1] + " " + seperate[2] + " left to play video games");
+var timeLeft = $("#time-left").text(seperate[1] + " " + seperate[2] + " left to play video games");
+
+submitDays.on("click", function timeBeatGame() {
+    // let timeLeft = seperate[1]
+    var userCurrentGame = JSON.parse(localStorage.getItem("userGame"));
+    var currentGameTime = userCurrentGame.gamePlayTime;
+    var days = $("#days").val()
+
+    timeToBeat = currentGameTime / days;  
+    
+    localStorage.setItem("timeSpentperDay", timeToBeat);
+    localStorage.setItem("days", days);
+
+    console.log(currentGameTime)
+    console.log(timeToBeat)
+
+    $("#beat-game").text("If you spend " + timeToBeat + " hours per day playing \nthis game you will beat it in " + days + " days!")
+    
+})
+
+function displayStuff () {
+    var time = localStorage.getItem("timeSpentperDay")
+    var days = localStorage.getItem("days")
+
+    $("#beat-game").text("If you spend " + time + " hours per day playing \nthis game you will beat it in " + days + " days!")
+
+}
+
 
 //variables for hours in day - minus the average time it takes to eat and drink
 
@@ -267,7 +298,7 @@ function card1 () {
     }
     var displayRow = $("<div class='row my-5 card-display' id='card-info-grab1'></div>")
     var displayColumn1 = $("<div class='col-sm-3'></div>")
-    var displayColumn2 = $("<div class='col-sm-9'></div>")
+    var displayColumn2 = $("<div class='col-sm-9 fd-awy'></div>")
     var displaySearchResults1 = $("<div class='new-card'></div>")
     var displaySearchResults2 = $("<div class='new-card'></div>")
     var displayTitle = $("<h1 class='game-title-card'></h1>")
@@ -275,7 +306,7 @@ function card1 () {
     var gameImage = $("<img id='game-image' src='" + gameImages[0] + "'>")
 
     displayTitle.text(gameNames[0])
-    displayPlayTime.text(gamePlayTimes[0])
+    displayPlayTime.text(gamePlayTimes[0] + " hours to beat!")
     displaySearchResults1.append(gameImage)
     displaySearchResults2.append(displayTitle)
     displaySearchResults2.append(displayPlayTime)
@@ -316,7 +347,7 @@ function card2 () {
     }
     var displayRow = $("<div class='row my-5 card-display' id='card-info-grab2'></div>");
     var displayColumn1 = $("<div class='col-sm-3'></div>");
-    var displayColumn2 = $("<div class='col-sm-9'></div>");
+    var displayColumn2 = $("<div class='col-sm-9 fd-awy'></div>");
     var displaySearchResults1 = $("<div class='new-card'></div>");
     var displaySearchResults2 = $("<div class='new-card'></div>");
     var displayTitle = $("<h1 class='game-title-card'></h1>");
@@ -324,7 +355,7 @@ function card2 () {
     var gameImage = $("<img id='game-image' src='" + gameImages[1] + "'>");
     
     displayTitle.text(gameNames[1]);
-    displayPlayTime.text(gamePlayTimes[1]);
+    displayPlayTime.text(gamePlayTimes[1] + " hours to beat!");
     displaySearchResults1.append(gameImage);
     displaySearchResults2.append(displayTitle);
     displaySearchResults2.append(displayPlayTime);
@@ -365,7 +396,7 @@ function card3() {
     }
     var displayRow = $("<div class='row my-5 card-display' id='card-info-grab3'></div>")
     var displayColumn1 = $("<div class='col-sm-3'></div>")
-    var displayColumn2 = $("<div class='col-sm-9'></div>")
+    var displayColumn2 = $("<div class='col-sm-9 fd-awy'></div>")
     var displaySearchResults1 = $("<div class='new-card'></div>")
     var displaySearchResults2 = $("<div class='new-card'></div>")
     var displayTitle = $("<h1 class='game-title-card'></h1>")
@@ -373,7 +404,7 @@ function card3() {
     var gameImage = $("<img id='game-image' src='" + gameImages[2] + "'>")
 
     displayTitle.text(gameNames[2])
-    displayPlayTime.text(gamePlayTimes[2])
+    displayPlayTime.text(gamePlayTimes[2] + " hours to beat!")
     displaySearchResults1.append(gameImage)
     displaySearchResults2.append(displayTitle)
     displaySearchResults2.append(displayPlayTime)
@@ -415,15 +446,15 @@ function card4() {
     }
     var displayRow = $("<div class='row my-5 card-display' id='card-info-grab4'></div>")
     var displayColumn1 = $("<div class='col-sm-3'></div>")
-    var displayColumn2 = $("<div class='col-sm-9'></div>")
+    var displayColumn2 = $("<div class='col-sm-9 fd-awy'></div>")
     var displaySearchResults1 = $("<div class='new-card'></div>")
     var displaySearchResults2 = $("<div class='new-card'></div>")
-    var displayTitle = $("<h1 class='game-title-card'></h1>")
+    var displayTitle = $("<h1 class='game-title-card justify-content-end'></h1>")
     var displayPlayTime = $("<h3 class='game-play-time' name='" + gameNames[3] + "'></h3>")
     var gameImage = $("<img id='game-image' src='" + gameImages[3] + "'>")
 
     displayTitle.text(gameNames[3])
-    displayPlayTime.text(gamePlayTimes[3])
+    displayPlayTime.text(gamePlayTimes[3] + " hours to beat!")
     displaySearchResults1.append(gameImage)
     displaySearchResults2.append(displayTitle)
     displaySearchResults2.append(displayPlayTime)
@@ -465,7 +496,7 @@ function card5() {
 
     var displayRow = $("<div class='row my-5 card-display' id='card-info-grab5'></div>")
     var displayColumn1 = $("<div class='col-sm-3'></div>")
-    var displayColumn2 = $("<div class='col-sm-9'></div>")
+    var displayColumn2 = $("<div class='col-sm-9 fd-awy'></div>")
     var displaySearchResults1 = $("<div class='new-card'></div>")
     var displaySearchResults2 = $("<div class='new-card'></div>")
     var displayTitle = $("<h1 class='game-title-card'></h1>")
@@ -473,7 +504,7 @@ function card5() {
     var gameImage = $("<img id='game-image' src='" + gameImages[4] + "'>")
 
     displayTitle.text(gameNames[4])
-    displayPlayTime.text(gamePlayTimes[4])
+    displayPlayTime.text(gamePlayTimes[4] + " hours to beat!")
     displaySearchResults1.append(gameImage)
     displaySearchResults2.append(displayTitle)
     displaySearchResults2.append(displayPlayTime)
@@ -515,7 +546,7 @@ function card6() {
  
     var displayRow = $("<div class='row my-5 card-display' id='card-info-grab6'></div>")
     var displayColumn1 = $("<div class='col-sm-3'></div>")
-    var displayColumn2 = $("<div class='col-sm-9'></div>")
+    var displayColumn2 = $("<div class='col-sm-9 fd-awy'></div>")
     var displaySearchResults1 = $("<div class='new-card'></div>")
     var displaySearchResults2 = $("<div class='new-card'></div>")
     var displayTitle = $("<h1 class='game-title-card'></h1>")
@@ -523,7 +554,7 @@ function card6() {
     var gameImage = $("<img id='game-image' src='" + gameImages[5] + "'>")
 
     displayTitle.text(gameNames[5])
-    displayPlayTime.text(gamePlayTimes[5])
+    displayPlayTime.text(gamePlayTimes[5] + " hours to beat!")
     displaySearchResults1.append(gameImage)
     displaySearchResults2.append(displayTitle)
     displaySearchResults2.append(displayPlayTime)

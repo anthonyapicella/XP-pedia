@@ -53,8 +53,8 @@
               <p>Would you like to add this game to your profile banner?</p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary btn-yes">Yes</button>
-              <button type="button" class="btn btn-secondary btn-no" data-dismiss="modal">No</button>
+              <button type="button" class="btn btn-primary btn-yes" id="button-yes">Yes</button>
+              <button type="button" class="btn btn-secondary btn-no" data-dismiss="modal" id="button-no">No</button>
             </div>
           </div>
         </div>
@@ -71,7 +71,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <p>Are you sure you have zero obligations and NEVER sleep? <br> Remeber to use the checkboxes to tell us what your schedule is like!</p>
+            <p>Are you sure you have zero obligations and NEVER sleep? <br> Remember to use the checkboxes to tell us what your schedule is like!</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" id="honesty-button" data-dismiss="modal"> Try Being Honest</button>
@@ -83,15 +83,21 @@
     <!--here is our jumbotron-->
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-          <h1 class="display-4" style="float: right" id="title">XP pedia</h1>
+          <span id="logo-span"><img src="./assets/images/XPpediaLOGO.png" id="logo" class="col-6 img-fluid float-right"></span>
           <div id="user-info">
-            <span id="ava"><img src="assets/images/avatar_1.png" id="avatar" class="col-6 col-lg-12"></span>
-            <p class="lead" class="col-6 col-lg-12"><span class="background-titles" id="user-name"></span></p>
+            <div class="lead" class="col-3 align-left"><span class="background-titles" id="user-name"></span></div>
+            <span id="ava"><img src="assets/images/avatar_1.png" id="avatar" class="col-3 img-fluid float-left"></span>
           </div>
             <div>
                 <p class="lead"><div id="user-current-game"></div></p>
             </div>
         </div>
+    </div>
+    <div id="box-changes">
+      <p id="beat-game"></p>
+      <p class="days-beat-game">Enter days you want to spend to beat this game.</p>
+      <input type="number" id="days" class="days-beat-game">
+      <button type="button" id="submit-days" class="days-beat-game">Calculate Days to Beat</button>
     </div>
 
     <!--this is our seven day calendar-->
