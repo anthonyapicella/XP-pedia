@@ -50,18 +50,21 @@ this holds our users avatar and our users id in one line */
 
 /* this is the avatar image */
 #avatar {
-    max-width: 100px;
-    max-height: 100px;
-    margin-top: 4px;
-    box-shadow: -7px -7px 0px lawngreen;
+    /* max-width: 100px;
+    max-height: 100px; */
+    /* margin-top: 4px; */
+    filter: drop-shadow(0px 0px 0.75rem rgb(0, 255, 0));
+}
+
+#logo {
+  filter: drop-shadow(0px 0px 0.75rem rgb(0, 255, 0));
 }
 
 /* background for titles in jumbotron */
 .background-titles {
     background-color: orange;
-    border: var(--globalBorder);
     border-radius: 5px;
-    box-shadow: 0px 8px 13px rgb(0 255 0);
+    filter: drop-shadow(0px 0px 0.75rem rgb(0, 255, 0));
     font-family: 'Roboto Slab', serif;
     font-size: 35px;
 }
@@ -70,7 +73,9 @@ this holds our users avatar and our users id in one line */
 .lead {
     color: black;
     font-size: 35px;
+    border-style: none;
     font-family: 'DotGothic16', sans-serif;
+    filter: drop-shadow(0px 0px 0.75rem rgb(0, 255, 0));
 }
 
 /* ----------------------------------END JUMBOTRON STYLING --------------------------*/
