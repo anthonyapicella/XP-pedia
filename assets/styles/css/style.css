@@ -147,6 +147,14 @@ button:hover {
     background-position-x: center;
     opacity: 0.9;
     padding: 1px;
+    text-align: center;
+}
+
+#click-to-calc {
+    background-color: rgba(255, 255, 255, .9);
+    padding: 5px;
+    border-radius: 5px;
+    color: rgba(0, 195, 0, 1);
 }
 /* 
 this holds our users avatar and our users id in one line */
@@ -190,14 +198,12 @@ this holds our users avatar and our users id in one line */
 /* this is our main card so we can form and fit all elements together as one */
 #main-card {
     background-color: var(--blueBackgroundColor);
-    width: 22%;
-    padding: 10px 10px;
-    display: block;
     text-align: center;
-    margin: 0 10px 5px 10px;
+    margin: 0 auto;
     border: var(--globalBorder);
     border-radius: 30px;
     max-height: 450px;
+    min-width: 200px;
 }
 
 /* this is our platform selector */
@@ -208,7 +214,12 @@ this holds our users avatar and our users id in one line */
     margin: 0 auto;
     margin-bottom: 10px;
     border-radius: 5px;
+    max-width: 200px;
     box-shadow: var(--shadow);
+    text-align: center;
+}
+.selectpicker {
+    min-width: 100px;
 }
 
 /* this is where they input a game to search for */
@@ -216,6 +227,7 @@ this holds our users avatar and our users id in one line */
     background-color: orange;
     border-radius: 5px;
     border-color: var(--globalBorder);
+    width: 100%;
 }
 
 /* this is our find game button */
@@ -260,7 +272,8 @@ this holds our users avatar and our users id in one line */
 
 /* this is where we hold our main input card and any new cards that populate */
 #display-body {
-    display: flex;
+    position: relative;
+    
 }
 
 * {cursor: url(https://cur.cursors-4u.net/sports/spo-1/spo15.cur), auto !important;}
@@ -346,20 +359,16 @@ this holds our users avatar and our users id in one line */
 }
 
 /* ----------------------------------------- Styling for schedule -------------------*/
-#calculate-freetime {
-    display: flex;
+
+.form-cards {
     background-color: var(--blueBackgroundColor);
-    width: 75%;
-    padding: 10px 10px;
     text-align: center;
     border: var(--globalBorder);
     border-radius: 30px;
     margin-bottom: 5px;
-    
-}
-
-.form-cards {
+    height: fit-content;
     padding: .5em;
+    min-width: 200px;
 }
 
 .checkbox {
@@ -443,19 +452,6 @@ body{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*----------------------------------------END CURRENT GAME STYLING--------------------------------*/
 
 #beat-game {
@@ -520,51 +516,26 @@ body{
         color: black;
     }
 
-    #calender{
-        background-color: var(--blueBackgroundColor);
-        border: var(--globalBorder);
-        box-shadow: var(--shadow);
-        margin: 2px;
-        border-radius: 5px;
-        display: flex;
-        flex-wrap:nowrap;
-    }
 
-        .day-card{
-            font-weight: 500;
-            background-color: var(--blueBackgroundColor);
-            margin: 0 auto;
-            padding: .5em;
-            border: var(--globalBorder);
-            border-radius: 10px;
-            color: black;
-            text-shadow: 1px 1px 1px rgb(0 255 0 / 50%);
-            margin-bottom: .5em;
-            text-align: center;
-            display: flex;
-            justify-content: space-between;
-            align-content:flex-start;
-            font-size: 12px;
-        }
             
-        #main-card {
+    #main-card {
     background-color: var(--blueBackgroundColor);
     width: 22%;
     padding: 10px 10px;
     display: block;
     text-align: center;
-    margin: 0 10px 5px 10px;
+    margin: 0 auto;
     border: var(--globalBorder);
     border-radius: 30px;
     max-height: 450px;
-    font-size: 12px;
+
 }
 
-
+/* 
     .justify-content-center , col{
      display: table-row-group;
       
-  }
+  } */
 
 
 

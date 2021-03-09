@@ -18,9 +18,9 @@
 
 ## Description 
 
-User loads page, enters a userID and picks from checkboxes to help estimate their daily free time. The user then searches for a game and our application shows them a list of relevant games and the times it takes to complete each one.
+User loads page, enters a userID that populates into the user profile banner. User then searches for any game in the world on four different platforms and closely related games or the exact game they search for populate into game cards below with the game title, game photo, and the amount of time it takes to beat that game. User can then click any game and save it to their profile banner.
 
-Our user then selects a game and adds it to their profile banner. From there they can choose the amount of days they would like to play and the app will calculate the exact hours/minutes per day they will need to play in order to beat the game within their desired time frame.
+User can then calculate their free time by answer four simple questions. Their free time will populate into the Monday through Sunday time cards. User can then enter how many days they would like to beat the game in and it will show them how many hours per day they need to play in order to beat the game within their desired time frame.
 
 ## Demo
 
@@ -30,6 +30,6 @@ Our user then selects a game and adds it to their profile banner. From there the
 
 ## Collaborators
 
-* [Jeffery Patterson ](https://github.com/jpatterson933)
+* [Jeffery Patterson](https://github.com/jpatterson933) (*jpatterson933@ucla.edu*)
 * [Christopher Interiano](https://github.com/cinteriano)  (*cinteriano@live.com*)
 * [Anthony Apicella](https://github.com/anthonyapicella)
