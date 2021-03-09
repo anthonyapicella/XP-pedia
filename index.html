@@ -92,63 +92,69 @@
                 <p class="lead"><div id="user-current-game"></div></p>
             </div>
         </div>
+        <h6><a href="#schedule-title" id="click-to-calc">Click here to Calculate Free Time</a></h6>
     </div>
+    <h1 style="text-align: center;">Find your Game!</h1>
+    <!--this div encompasses are main card for the user to input-->
+    <div class="col-2 justify-content-center" id="main-card">
+      <!--this is our platform selection drop down-->
+      <p><span id="choose-platform-title">Choose your Platform</span></p>
+      <select class="selectpicker col-12" multiple data-live-search="true" id="platform-selection">
+        <option checked class="" id="no-exercise" value="18">Playstation</option>
+        <option class="" id="yes-exercise" value="4">PC</option>
+        <option class="" id="yes-exercise" value="1">Xbox</option>
+        <option class="" id="yes-exercise" value="7">Nintendo</option>
+      </select>
+        <!--this is our submit button-->
+      <div>
+        <input type="text" id="search-game" placeholder="Search Games" onfocus="this.placeholder =''"  onblur="this.placeholder = 'Search Games'">
+        <button id="find-game">Submit</button>
+      </div>
+    </div>
+    <div id="game-cards" class="row-12"></div>
 
+    <div id="game-information"></div>
 
     <!--this is our seven day calendar-->
-    <h3 id="schedule-title">Your Schedule</h3>
     <div class="row justify-content-end">
-        <div class="col-1 day-card">
+        <div class="col col-sm-3 col-md-1 day-card">
             <div id="monday">Monday</div>
             <div id="free-time-monday"></div>
         </div>
-        <div class="col-1 day-card">
+        <div class="col col-sm-3 col-md-1 day-card">
             <div id="tuesday">Tuesday</div>
             <div id="free-time-tuesday"></div>
         </div>
-        <div class="col-1 day-card">
+        <div class="col col-sm-3 col-md-1 day-card">
             <div id="wednesday">Wednesday</div>
             <div id="free-time-wednesday"></div>
         </div>
-        <div class="col-1 day-card">
+        <div class="col col-sm-3 col-md-1 day-card">
             <div id="thursday">Thursday</div>
             <div id="free-time-thursday"></div>
         </div>
-        <div class="col-1 day-card">
+        <div class="col col-sm-3 col-md-1 day-card">
             <div id="friday">Friday</div> 
             <div id="free-time-friday"></div>
         </div>
-        <div class="col-1 day-card">
+        <div class="col col-sm-3 col-md-1 day-card">
             <div id="saturday">Saturday</div>
             <div id="free-time-saturday"></div>
         </div>
-        <div class="col-1 day-card">
+        <div class="col col-sm-3 col-md-1 day-card">
             <div id="sunday">Sunday</div>
             <div id="free-time-sunday"></div>
         </div>
     </div>
 
-    <div id="display-body">
-      <!--this div encompasses are main card for the user to input-->
-      <div id="main-card">
-        <!--this is our platform selection drop down-->
-        <p><span id="choose-platform-title">Choose your Platform</span></p>
-        <select class="selectpicker" multiple data-live-search="true" id="platform-selection">
-          <option checked class="" id="no-exercise" value="18">Playstation</option>
-          <option class="" id="yes-exercise" value="4">PC</option>
-          <option class="" id="yes-exercise" value="1">Xbox</option>
-          <option class="" id="yes-exercise" value="7">Nintendo</option>
-        </select>
-          <!--this is our submit button-->
-        <div>
-          <input type="text" id="search-game" placeholder="Search Games" onfocus="this.placeholder =''"  onblur="this.placeholder = 'Search Games'">
-          <button id="find-game">Submit</button>
-        </div>
-      </div>
-
+    <div id="row display-body">
       <!------------------ added radio buttons as it was easier to calculate total free time --------->
-        <div id="calculate-freetime" class="grid-container">
-          <div class="form-cards">
+      <div class="justify-content-center" style="text-align: center;">
+          <h3 id="schedule-title">Choose Your Schedule</h3>
+          <input class="row-2 justify-content-center" type="button" id="save_value" name="save_value" value="Save Schedule">
+        </div>
+        <div class="col-12 justify-content-around" style="display: flex">
+          <div class="col-2 form-cards">
               <p><span>How is your sleep?</span></p>
               <div class="checkbox">
                   <label><input type="checkbox" id="no-sleep" value="5" name="sleep">Gaming > Sleep</label>
@@ -157,7 +163,7 @@
                   <label><input type="checkbox" class="sleep" value="8" name="sleep">I sleepy normally</label>
               </div>
           </div>
-          <div class="form-cards">
+          <div class="col-2 form-cards">
               <p><span>Do you work?</span></p>
               <div class="checkbox">
                   <label><input type="checkbox" class="work" value="0" name="work">What is work?</label>
@@ -169,7 +175,7 @@
                   <label><input type="checkbox" class="work" value="8" name="work">I work full time</label>
               </div>
           </div>
-          <div class="form-cards">
+          <div class="col-2 form-cards">
               <p><span>Do you have dependents?</span></p>
               <div class="checkbox">
                   <label><input type="checkbox" class="dependent" value="0" name="dependent">No one depends on me</label>
@@ -181,7 +187,7 @@
                   <label><input type="checkbox" class="dependent" value="2" name="dependent">Multiple people depend on me</label>
               </div>
           </div>
-          <div class="form-cards">
+          <div class="col-2 form-cards">
               <p><span>Do you go to school?</span></p>
               <div class="checkbox">
                   <label><input type="checkbox" class="school" value="0" name="school">What is science?</label>
@@ -191,12 +197,9 @@
               </div>
               <div class="checkbox">
                   <label><input type="checkbox" class="school" value="8" name="school">I attend school full-time</label>
-              </div>
-          </div>
-          <div>
-              <input type="button" id="save_value" name="save_value" value="Save">
-          </div>
-      </div>
+                </div>
+            </div>
+        </div>
     </div>
         <!------------------ end of new html --------->
     <div id="box-changes">
@@ -206,12 +209,7 @@
       <button type="button" id="submit-days" class="days-beat-game">Calculate Days to Beat</button>
     </div>
     
-    <div id="game-cards">
-    </div>
 
-    <div id="game-information">
-        
-    </div>
     
 
       

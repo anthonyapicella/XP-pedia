@@ -44,7 +44,7 @@ submitDays.on("click", function timeBeatGame() {
     var currentGameTime = userCurrentGame.gamePlayTime;
     var days = $("#days").val()
 
-    timeToBeat = currentGameTime / days;  
+    timeToBeat = Math.round(currentGameTime / days);  
     
     localStorage.setItem("timeSpentperDay", timeToBeat);
     localStorage.setItem("days", days);
@@ -295,6 +295,7 @@ $("#find-game").on("click", function(event) {
 var gameNames = localStorage.getItem("gameNameStr").split(",");
 var gamePlayTimes = localStorage.getItem("gameTimeStr").split(",");
 var gameImages = localStorage.getItem("gameImageStr").split(",");
+console.log(gameNames)
 
 //each function will pull a card unless the string stored is empty or undefined
 function card1 () {
