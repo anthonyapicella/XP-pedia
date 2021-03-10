@@ -1,0 +1,574 @@
+:root {
+    --globalBorder: 3px solid rgba(0, 255, 0, 1);
+    --blueBackgroundColor: rgba(114, 143, 255, 1);
+    --shadow: 1px 1px 1px black;
+}
+
+/*-----------------------------------MODAL STYLING------------------------------------*/
+.modal-header {
+    background-color: var(--blueBackgroundColor);
+    border: var(--globalBorder);
+}
+
+.modal-title {
+    background-color: orange;
+    padding: .25em;
+    border-radius: 15px;
+    border: var(--globalBorder);
+    box-shadow: var(--shadow);
+}
+
+.modal-body {
+    border: var(--globalBorder);
+}
+
+.modal-body p {
+    background-color: orange;
+    padding: 1em;
+    border-radius: 15px;
+    border: var(--globalBorder);
+    font-weight: 700;
+    text-align: center;
+    color: black;
+    font-family: 'DotGothic16', sans-serif;
+    box-shadow: 0px 7px 9px rgb(0 255 0);
+}
+
+#honesty-button {
+    background-color: orange;
+    font-family: 'DotGothic16', sans-serif;
+    border-radius: 20px;
+    margin: 5px 0;
+    border: var(--globalBorder);
+    box-shadow: var(--shadow);
+    color: black;
+}
+#honesty-button:hover {
+    background-color: rgba(0, 255, 0, 1);
+    border: 2px solid orange;
+    color: black;
+    box-shadow: 0px 5px 5px black;
+    color: white;
+    text-shadow: 1px 1px 6px black;
+}
+
+.modal-footer {
+    background-color: var(--blueBackgroundColor);
+    border: var(--globalBorder);
+}
+
+.btn {
+    background-color: orange;
+    border: var(--globalBorder);
+    color: black;
+}
+
+.btn:hover {
+    background-color: rgba(0, 255, 0, 1);
+    border: 2px solid orange;
+    color: black;
+    box-shadow: 0px 5px 5px black;
+    color: white;
+    text-shadow: 1px 1px 6px black;
+}
+
+#button-yes {
+    background-color: orange;
+    border: var(--globalBorder);
+    color: black;
+}
+#button-yes:hover {
+    background-color: rgba(0, 255, 0, 1);
+    border: 2px solid orange;
+    color: black;
+    box-shadow: 0px 5px 5px black;
+    color: white;
+    text-shadow: 1px 1px 6px black;
+}
+#find-game:hover {
+    background-color: rgba(0, 255, 0, 1);
+    border: 2px solid orange;
+    color: black;
+    box-shadow: 0px 5px 5px black;
+    color: white;
+    text-shadow: 1px 1px 6px black;
+}
+button:hover {
+    background-color: rgba(0, 255, 0, 1);
+    border: 2px solid orange;
+    color: black;
+    box-shadow: 0px 5px 5px black;
+    color: white;
+    text-shadow: 1px 1px 6px black;
+}
+#save_value:hover {
+        background-color: rgba(0, 255, 0, 1);
+        border: 2px solid orange;
+        color: black;
+        box-shadow: 0px 5px 5px black;
+        color: white;
+        text-shadow: 1px 1px 6px black;
+}
+
+
+/* style for avatar picture */
+#date {
+    padding-bottom: 1em;
+    background-color: orange;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    height: 1.5em;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* this is our websites name */
+#title {
+    background-color: orange;
+    color: black;
+    font-size: 3em;
+    font-family: 'Roboto Slab', serif;
+    width: fit-content;
+    height: fit-content;
+    margin-top: 2em;
+    border: var(--globalBorder);
+    border-radius: 5px;
+}
+
+/* ----------------------------------BEG. JUMBOTRON STYLING --------------------------*/
+.jumbotron-fluid {
+    background-image: url(https://i.pinimg.com/originals/4a/18/3c/4a183c1dcf0e901399b30ecb3e1612ae.png);
+    background-position-y: 90%;
+    background-position: bottom;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    background-position-x: center;
+    opacity: 0.9;
+    padding: 1px;
+}
+/* 
+this holds our users avatar and our users id in one line */
+#user-info {
+    display: flex;
+    margin-top: 1.5em;
+}
+
+/* this is the avatar image */
+#avatar {
+    /* max-width: 100px;
+    max-height: 100px; */
+    /* margin-top: 4px; */
+    filter: drop-shadow(0px 0px 0.75rem rgb(0, 255, 0));
+}
+
+#logo {
+  filter: drop-shadow(0px 0px 0.75rem rgb(0, 255, 0));
+}
+
+/* background for titles in jumbotron */
+.background-titles {
+    background-color: orange;
+    border-radius: 5px;
+    filter: drop-shadow(0px 0px 0.75rem rgb(0, 255, 0));
+    font-family: 'Roboto Slab', serif;
+    font-size: 35px;
+}
+
+/*titles that are in jumbotron*/
+.lead {
+    color: black;
+    font-size: 35px;
+    border-style: none;
+    font-family: 'DotGothic16', sans-serif;
+    filter: drop-shadow(0px 0px 0.75rem rgb(0, 255, 0));
+}
+
+/* ----------------------------------END JUMBOTRON STYLING --------------------------*/
+
+/* this is our main card so we can form and fit all elements together as one */
+#main-card {
+    background-color: var(--blueBackgroundColor);
+    width: 22%;
+    padding: 10px 10px;
+    display: block;
+    text-align: center;
+    margin: 0 10px 5px 10px;
+    border: var(--globalBorder);
+    border-radius: 30px;
+    max-height: 450px;
+}
+
+/* this is our platform selector */
+#platform-selection {
+    background-color: orange;
+    display: table;
+    border: var(--globalBorder);
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+}
+
+/* this is where they input a game to search for */
+#search-game {
+    background-color: orange;
+    border-radius: 5px;
+    border-color: var(--globalBorder);
+}
+
+/* this is our find game button */
+#find-game {
+    background-color: orange;
+    font-family: 'DotGothic16', sans-serif;
+    border-radius: 20px;
+    margin: 5px 0;
+    border: var(--globalBorder);
+    box-shadow: var(--shadow);
+}
+/* --------------------------------------------------BEG. TIMELOG STYLING---------------------------------------------------- */
+
+.calendar {
+    background-color: var(--blueBackgroundColor);
+    border: var(--globalBorder);
+    box-shadow: var(--shadow);
+    margin: 10px;
+    border-radius: 5px;
+}
+
+#save_value {
+    background-color: orange;
+    font-family: 'DotGothic16', sans-serif;
+    border-radius: 20px;
+    margin: 5px 0;
+    border: var(--globalBorder);
+    box-shadow: var(--shadow);
+}
+
+/* --------------------------------------------------END TIMELOG STYLING---------------------------------------------------- */
+
+/* this idea will add styling for any game cards that populate after a search */
+#game-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    padding-left: 1em;
+    box-shadow: var(--shadow);
+
+}
+
+/* this is where we hold our main input card and any new cards that populate */
+#display-body {
+    display: flex;
+}
+
+* {cursor: url(https://cur.cursors-4u.net/sports/spo-1/spo15.cur), auto !important;}
+
+::placeholder{
+    color: black;
+}
+/*------------------------------------GAME CARDS-------------------------------------------------*/
+/* this id holds our displayrow where our content populates (its what Wilson created) */
+.card-display {
+    border: var(--globalBorder);
+    background-color: var(--blueBackgroundColor);
+    padding: 5px;
+    text-align: right;
+    width: 23em;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+
+.card-display:hover {
+    background-color: rgba(0, 255, 0, 1);
+    border: 2px solid orange;
+    color: black;
+    box-shadow: 0px 5px 5px black;
+    color: white;
+    text-shadow: 1px 1px 6px black;
+}
+
+
+/* this is the stying for the new card class that is attached to both of our elements when a games informaiton is drawn */
+.new-card {
+    width: 200px;
+    max-width: 200px;
+    height: 200px;
+    max-height: 200px;
+}
+
+/* style game card titles using this */
+.game-title-card {
+    background-color: orange;
+    color: black;
+    font-size: 1.5em;
+    border-radius: 19px;
+    padding: 3px;
+    text-align: center;
+    border: var(--globalBorder);
+    width: fit-content;
+    margin-left: 4em;
+}
+
+.card-display:hover {
+        background-color: orange;
+        border: 2px solid rgba(0, 255, 0, 1);
+        color: black;
+        box-shadow: 0px 5px 5px black;
+        color: white;
+        text-shadow: 1px 1px 6px black;
+    }
+
+/*game play time in cards*/
+.game-play-time {
+    color: black;
+    background-color: orange;
+    width: fit-content;
+    float: right;
+    padding: 4px;
+    font-size: 21px;
+    border: var(--globalBorder);
+    border-radius: 5px;
+    box-shadow: 0px 2px 12px 2px rgb(0 255 0);
+}
+
+/*game images in cards*/
+#game-image {
+    width: 100%;
+    max-width: 200px;
+    height: 100%;
+    max-height: 200px;
+}
+#game-image:hover{
+    z-index: 99;
+}
+
+/* ----------------------------------------- Styling for schedule -------------------*/
+#calculate-freetime {
+    display: flex;
+    background-color: var(--blueBackgroundColor);
+    width: 75%;
+    padding: 10px 10px;
+    text-align: center;
+    border: var(--globalBorder);
+    border-radius: 30px;
+    margin-bottom: 5px;
+    
+}
+
+.form-cards {
+    padding: .5em;
+}
+
+.checkbox {
+    padding: 5px;
+}
+
+
+
+/* ----------------------------------------- Styling for scheduler -------------------*/
+
+body{
+    background-color: antiquewhite;
+}
+
+
+#platform-selection option:checked {
+ background: red !important;
+
+}
+
+/*----------------------------------------BEG CURRENT GAME STYLING--------------------------------*/
+
+#user-current-game {
+    width: 200px;
+    max-width: 200px;
+    height: 200px;
+    max-height: 200px;
+}
+
+#current-game-title {
+    text-shadow: 1px 1px 1px lawngreen;
+    background-color: rgba(255, 165, 0, 1);
+    border: var(--globalBorder);
+    box-shadow: var(--shadow);
+    border-radius: 5px;
+    color: black;
+    font-size: 16px;
+}
+
+#current-game-play-time {
+    color: black;
+    text-shadow: 1px 1px 1px lawngreen;
+    background-color: rgba(255, 165, 0, 1);
+    border: var(--globalBorder);
+    box-shadow: var(--shadow);
+    border-radius: 5px;
+    color: black;
+    font-size: 16px;
+}
+
+#current-game-image {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+#current-wrapper {
+    width: fit-content;
+}
+
+.day-card{
+    font-weight: 500;
+    background-color: var(--blueBackgroundColor);
+    margin: 0 auto;
+    padding: .5em;
+    border: var(--globalBorder);
+    border-radius: 10px;
+    color: black;
+    text-shadow: 1px 1px 1px rgb(0 255 0 / 50%);
+    margin-bottom: .5em;
+    text-align: center;
+    min-width: 110px;
+    min-height: 70px;
+
+}
+
+#schedule-title {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------------------------------------END CURRENT GAME STYLING--------------------------------*/
+
+#beat-game {
+    background-color: var(--blueBackgroundColor);
+    border: var(--globalBorder);
+    border-radius: 15px;
+}
+
+#box-changes {
+    margin: 0 auto;
+    width: fit-content;
+    text-align: center;
+    border: var(--globalBorder);
+    padding: 1em;
+    border-radius: 15px;
+    background-color: orange;
+}
+
+@media screen and (max-width: 992px) {
+    body {
+        background-color: antiquewhite;
+    }
+    jumbotron-fluid {
+        background-image: url(https://i.pinimg.com/originals/4a/18/3c/4a183c1dcf0e901399b30ecb3e1612ae.png);
+        background-position-y: 120%;
+        background-position: center;
+        background-size: 120%;
+        background-repeat: no-repeat;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        background-color: antiquewhite;
+    }
+    .jumbotron-fluid {
+        background-color: darkgrey;
+        background-repeat: no-repeat;
+        background-image: url(https://i.pinimg.com/originals/4a/18/3c/4a183c1dcf0e901399b30ecb3e1612ae.png);
+        background-position-y: 120%;
+        background-position: center;
+        background-size: 120%;
+        background-repeat: no-repeat;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    body {
+        background-color: antiquewhite;
+        background-repeat: no-repeat;
+    }
+    .jumbotron-fluid {
+        background-image: url(https://i.pinimg.com/originals/4a/18/3c/4a183c1dcf0e901399b30ecb3e1612ae.png);
+        background-position-y: 120%;
+        background-position: center;
+        background-size: 120%;
+        background-repeat: no-repeat;
+    }
+    #dropdownMenuButton {
+        width: 95%;
+        background-color: orange;
+        color: black;
+    }
+
+    #calender{
+        background-color: var(--blueBackgroundColor);
+        border: var(--globalBorder);
+        box-shadow: var(--shadow);
+        margin: 2px;
+        border-radius: 5px;
+        display: flex;
+        flex-wrap:nowrap;
+    }
+
+        .day-card{
+            font-weight: 500;
+            background-color: var(--blueBackgroundColor);
+            margin: 0 auto;
+            padding: .5em;
+            border: var(--globalBorder);
+            border-radius: 10px;
+            color: black;
+            text-shadow: 1px 1px 1px rgb(0 255 0 / 50%);
+            margin-bottom: .5em;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-content:flex-start;
+            font-size: 12px;
+        }
+            
+        #main-card {
+    background-color: var(--blueBackgroundColor);
+    width: 22%;
+    padding: 10px 10px;
+    display: block;
+    text-align: center;
+    margin: 0 10px 5px 10px;
+    border: var(--globalBorder);
+    border-radius: 30px;
+    max-height: 450px;
+    font-size: 12px;
+}
+
+
+    .justify-content-center , col{
+     display: table-row-group;
+      
+  }
+
+
+
+
+
+
+}
